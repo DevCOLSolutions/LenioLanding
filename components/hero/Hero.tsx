@@ -181,7 +181,7 @@ export default function Hero() {
                   Comienza a usar Lenio
                 </Button>
               </Link>
-              <Link href={externalLinks.app} className="block">
+              <Link href={externalLinks.app} className="hidden md:block">
                 <Button className="h-10 px-6" variant="outline">
                   <Play /> Ver demostración
                 </Button>
