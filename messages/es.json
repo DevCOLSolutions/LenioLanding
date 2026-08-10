@@ -1,0 +1,348 @@
+{
+  "metadata": {
+    "title": "Lenio — Gestión documental y de procesos para instituciones educativas",
+    "titleTemplate": "%s · Lenio",
+    "description": "La plataforma donde tu colegio organiza su documentación, procesos administrativos y flujos de aprobación de forma centralizada, alineada a estándares ISO 9001.",
+    "keywords": [
+      "gestión documental",
+      "instituciones educativas",
+      "ISO 9001",
+      "colegios",
+      "procesos administrativos",
+      "gestión de documentos",
+      "educación"
+    ],
+    "ogTitle": "Lenio — Tu colegio, organizado",
+    "ogDescription": "Documentación, procesos y aprobaciones en un solo lugar. Simple, centralizado y alineado a ISO 9001."
+  },
+  "nav": {
+    "product": "Producto",
+    "features": "Funcionalidades",
+    "why": "Por qué Lenio",
+    "pricing": "Precios",
+    "resources": "Recursos",
+    "documentation": "Documentación",
+    "help": "Centro de ayuda",
+    "language": "Cambiar idioma",
+    "languages": "Idiomas",
+    "spanish": "Español",
+    "english": "English",
+    "cta": "Empezar gratis",
+    "startNow": "Iniciar sesión"
+  },
+  "hero": {
+    "badge": "Gestión documental y de procesos",
+    "title": {
+      "part1": "Un",
+      "part2": "espacio de trabajo",
+      "part3": "inteligente",
+      "part4": "para profesores e instituciones educativas"
+    },
+    "subtitle": " Planifica clases, evalúa a tus estudiantes, automatiza tareas y aprovecha al máximo la inteligencia artificial para dedicar más tiempo a enseñar.",
+    "ctaPrimary": "Crear cuenta gratis",
+    "ctaSecondary": "Ver funcionalidades",
+    "iso": "Alineado a estándares ISO 9001"
+  },
+  "features": {
+    "badge": "Funcionalidades",
+    "title": "Todo lo que tu institución necesita, sin el caos",
+    "subtitle": "Las herramientas que ya viven en el día a día de tu colegio, unificadas en una sola plataforma simple.",
+    "repoTitle": "Repositorio",
+    "repoDescription": "Gestión de archivos y documentos institucionales centralizada y con control de versiones.",
+    "classesTitle": "Clases",
+    "classesDescription": "Tablón, archivos, estudiantes, tareas y asistencia para el día a día académico.",
+    "builderTitle": "Constructor de Formatos",
+    "builderDescription": "Arma formatos institucionales personalizados — actas, evaluaciones, lo que tu colegio necesite — con un builder tipo drag-and-drop.",
+    "cta": "Conocer Lenio"
+  },
+  "funcionalidades": {
+    "badge": "Funcionalidades",
+    "progressLabel": "Explora",
+    "introTitle": "Todo lo que necesitas para enseñar.",
+    "introSubtitle": "Una plataforma diseñada alrededor del trabajo real del docente: planea, enseña, evalúa y haz seguimiento desde un solo lugar.",
+    "introScroll": "Desliza para recorrer",
+    "introProductAlt": "Dashboard de Lenio con la gestión académica del docente",
+    "alts": {
+      "planning": "Docente estructurando su planeación de clase",
+      "classes": "Salón de clase con estudiantes trabajando",
+      "activities": "Materiales y libros de actividades escolares",
+      "assessment": "Fragmento del panel de evaluación de Lenio",
+      "grading": "Cuaderno y apuntes de calificaciones",
+      "documents": "Documentos y evidencias organizadas en escritorio",
+      "ai": "Representación abstracta de la inteligencia artificial",
+      "agents": "Persona trabajando acompañada de asistentes digitales"
+    },
+    "planning": {
+      "eyebrow": "Planeación",
+      "title": "Planea con claridad y propósito",
+      "description": "Estructura tus clases conectando estándares, recursos y evidencias. Con la ayuda de la IA prepara secuencias didácticas completas en minutos.",
+      "items": [
+        "Secuencias didácticas",
+        "Conecta estándares y recursos",
+        "Planeaciones con IA"
+      ]
+    },
+    "classes": {
+      "eyebrow": "Clases",
+      "title": "Tu clase, organizada desde el primer día",
+      "description": "Lleva el día a día de cada clase en un solo lugar: información, recursos, estudiantes, tareas y asistencia sin saltar entre herramientas.",
+      "items": [
+        "Tablón con novedades",
+        "Recursos siempre disponibles",
+        "Estudiantes y asistencia",
+        "Tareas con seguimiento"
+      ]
+    },
+    "activities": {
+      "eyebrow": "Actividades",
+      "title": "Del enunciado a la entrega en tres pasos",
+      "description": "Crea actividades, configura la entrega y publícalas para toda tu clase. Todo lo que propones queda conectado con las calificaciones.",
+      "steps": [
+        {
+          "title": "Crear",
+          "description": "Diseña la actividad, las consignas y los criterios de evaluación."
+        },
+        {
+          "title": "Configurar",
+          "description": "Define el formato de entrega, los plazos y las instrucciones."
+        },
+        {
+          "title": "Publicar",
+          "description": "Compártela al instante con tu clase y haz seguimiento de las entregas."
+        }
+      ]
+    },
+    "assessment": {
+      "eyebrow": "Evaluación",
+      "title": "Evalúa el aprendizaje, no la papeleo",
+      "description": "Crea evaluaciones y rúbricas en minutos, recopila respuestas y deja que la plataforma organice los resultados por ti.",
+      "annotations": [
+        "Rúbricas",
+        "Banco de preguntas",
+        "Resultados automáticos"
+      ]
+    },
+    "grading": {
+      "eyebrow": "Calificaciones",
+      "title": "Menos planillas, más tiempo en el aula",
+      "description": "Clasifica el trabajo de tus estudiantes con criterios claros y genera notas, promedios e informes sin repetir cálculos a mano.",
+      "stat": {
+        "value": "4",
+        "unit": "horas",
+        "label": "menos de trabajo administrativo a la semana para un docente promedio."
+      }
+    },
+    "documents": {
+      "eyebrow": "Documentos",
+      "title": "Tu trayectoria, en un solo lugar",
+      "description": "Guarda planes, evidencias, recursos y formatos con control de versiones. Encuentra lo que necesites en segundos y compártelo con tu equipo."
+    },
+    "ai": {
+      "eyebrow": "IA",
+      "title": "La IA en el trabajo real del docente",
+      "description": "No es un chatbot suelto: la IA vive dentro de Lenio para ayudarte a planear, crear, retroalimentar y analizar sin salir de tu espacio de trabajo.",
+      "capabilities": [
+        "Genera actividades y preguntas",
+        "Escribe retroalimentación clara",
+        "Analiza resultados de evaluación",
+        "Prepara tu planeación de clase"
+      ]
+    },
+    "agents": {
+      "eyebrow": "Agentes",
+      "title": "Tu equipo de asistentes",
+      "description": "Agentes especializados que conocen tu contexto: trabajan los problemas de tu aula y hacen seguimiento contigo.",
+      "quote": "Tu equipo de asistentes.",
+      "agents": [
+        "Agente de Planeación",
+        "Agente de Actividades",
+        "Agente de Evaluación",
+        "Agente de Análisis"
+      ]
+    }
+  },
+  "why": {
+    "badge": "Por qué Lenio",
+    "title": "Diseñado para los colegios que hoy no tienen un sistema robusto",
+    "subtitle": "Muchas instituciones, especialmente las públicas y los colegios pequeños, manejan sus procesos con herramientas sueltas. Lenio los reúne con la simplicidad como prioridad.",
+    "point1Title": "Simplicidad",
+    "point1Description": "Interfaz limpia que cualquier docente adopta sin capacitación extensa.",
+    "point2Title": "Estándar ISO 9001",
+    "point2Description": "Tu documentación y procesos organizados con el enfoque de calidad que certifican los estándares internacionales.",
+    "point3Title": "Escalable",
+    "point3Description": "Empieza un docente, crece al colegio completo con su contratación institucional."
+  },
+  "cta": {
+    "title": "Listo para poner orden en tu institución",
+    "subtitle": "Crea tu cuenta gratis y descubre lo simple que puede ser gestionar tu colegio.",
+    "button": "Empezar gratis"
+  },
+  "precios": {
+    "badge": "Planes",
+    "title": "Un plan para cada etapa de tu forma de trabajar",
+    "subtitle": "Empieza gratis desde tu primer día y crece cuando lo necesites. Elige el plan adecuado para ti o para tu colegio.",
+    "perMonth": "/mes",
+    "perYear": "/año",
+    "goMonthlyLine": "≈ {price}/mes (pago anual)",
+    "freeForever": "Gratis para siempre",
+    "popular": "Más popular",
+    "contactUs": "Contáctanos",
+    "toDefine": "Por definir",
+    "schoolPlus": "School y Pro son complementarios: un docente puede tener el acceso institucional de su colegio (School) y, en paralelo, sus herramientas personales avanzadas e IA (Pro).",
+    "currencyNote": "Precios en {currency} para {country}.",
+    "more": "+{count} más",
+    "lite": {
+      "name": "Lite",
+      "description": "El plan de entrada de Lenio. Empieza sin pagar.",
+      "cta": "Empezar gratis",
+      "include": "Incluye",
+      "features": [
+        "Workspace personal",
+        "Gestión básica de clases",
+        "Registro de estudiantes",
+        "Actividades y tareas",
+        "Calificaciones básicas",
+        "Planeación básica",
+        "Recursos educativos",
+        "Funciones básicas de seguimiento",
+        "Acceso limitado a IA",
+        "Límites de almacenamiento",
+        "Límites de uso"
+      ]
+    },
+    "go": {
+      "name": "Go",
+      "description": "El plan económico para docentes individuales.",
+      "cta": "Empezar con Go",
+      "include": "Incluye todo Lite, más:",
+      "groups": [
+        {
+          "title": "Gestión académica",
+          "items": [
+            "Mayor cantidad de clases",
+            "Mayor número de estudiantes",
+            "Gestión completa de actividades",
+            "Evaluaciones",
+            "Calificaciones",
+            "Seguimiento académico",
+            "Rúbricas",
+            "Planeaciones",
+            "Recursos",
+            "Historial ampliado"
+          ]
+        },
+        {
+          "title": "Organización",
+          "items": [
+            "Mayor almacenamiento",
+            "Exportaciones",
+            "Más capacidad de organización",
+            "Más funcionalidades del workspace personal"
+          ]
+        },
+        {
+          "title": "IA",
+          "items": [
+            "Acceso a herramientas de IA",
+            "Generación limitada de actividades",
+            "Generación de preguntas",
+            "Ayuda para planeaciones",
+            "Asistencia básica para el docente"
+          ]
+        }
+      ]
+    },
+    "pro": {
+      "name": "Pro",
+      "description": "El plan premium individual de Lenio. Aquí empieza la diferencia.",
+      "cta": "Probar Pro",
+      "include": "Incluye todo Go, más:",
+      "groups": [
+        {
+          "title": "IA avanzada",
+          "items": [
+            "Generación avanzada de actividades",
+            "Generación de evaluaciones",
+            "Generación de rúbricas",
+            "Adaptación de actividades",
+            "Análisis de resultados",
+            "Análisis del desempeño de estudiantes",
+            "Generación de informes",
+            "Resumen de información",
+            "Asistencia para planeación",
+            "Asistente personal del docente",
+            "Agentes de IA especializados",
+            "Mayor cantidad de generaciones",
+            "Automatizaciones basadas en IA"
+          ]
+        },
+        {
+          "title": "Gestión académica avanzada",
+          "items": [
+            "Seguimiento detallado de estudiantes",
+            "Análisis del rendimiento",
+            "Informes avanzados",
+            "Historial completo",
+            "Mayor capacidad de almacenamiento",
+            "Mayor número de clases y estudiantes"
+          ]
+        }
+      ],
+      "agentsTitle": "Agentes de IA",
+      "agentsIntro": "Tu equipo de asistentes dentro de Lenio.",
+      "agents": [
+        {
+          "title": "Agente de Planeación",
+          "description": "Te ayuda a diseñar clases y secuencias."
+        },
+        {
+          "title": "Agente de Evaluación",
+          "description": "Crea evaluaciones, preguntas y rúbricas."
+        },
+        {
+          "title": "Agente de Análisis",
+          "description": "Analiza resultados y encuentra patrones."
+        },
+        {
+          "title": "Agente de Retroalimentación",
+          "description": "Genera feedback para tus estudiantes."
+        },
+        {
+          "title": "Agente de Contenido",
+          "description": "Transforma contenidos en actividades y explicaciones."
+        }
+      ]
+    },
+    "school": {
+      "name": "School",
+      "description": "Plazas y licencias para colegios. Los administradores invitan a sus docentes.",
+      "cta": "Contactar ventas",
+      "include": "Incluye",
+      "features": [
+        "Workspace institucional",
+        "Administración de docentes",
+        "Invitaciones",
+        "Gestión de miembros",
+        "Roles y permisos",
+        "Clases institucionales",
+        "Información compartida",
+        "Equipos y departamentos",
+        "Recursos institucionales",
+        "Administración centralizada",
+        "Reportes institucionales",
+        "Gestión de plazas",
+        "Facturación institucional",
+        "Soporte institucional"
+      ]
+    }
+  },
+  "countrySelector": {
+    "label": "Cambiar país y moneda · {country} ({currency})",
+    "searchPlaceholder": "Buscar país o moneda…",
+    "noResults": "Sin resultados"
+  },
+  "footer": {
+    "rights": "Lenio es el nombre comercial de CETI OS.",
+    "iso": "Gestión documental y de procesos para instituciones educativas, alineada a ISO 9001."
+  }
+}
