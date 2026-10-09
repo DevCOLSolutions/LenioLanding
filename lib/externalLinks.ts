@@ -7,3 +7,11 @@ export const externalLinks = {
   app: "https://app.uselenio.com",
   contacto: "https://uselenio.com/contacto",
 };
+
+export function withUtm(url: string, medium: string): string {
+  const parsed = new URL(url);
+  parsed.searchParams.set("utm_source", "landing");
+  parsed.searchParams.set("utm_medium", medium);
+  parsed.searchParams.set("utm_campaign", "signup");
+  return parsed.toString();
+}

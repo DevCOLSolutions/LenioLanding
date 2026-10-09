@@ -5,7 +5,7 @@ import { COUNTRY_COOKIE_NAME } from "@/lib/country/cookies"
 import {
   countryExists,
   detectCountryFromLocaleTag,
-  isSpanishSpeakingCountry,
+  localeForCountry,
 } from "@/lib/country/countries"
 
 const intlMiddleware = createMiddleware(routing)
@@ -19,8 +19,8 @@ export default function middleware(request: NextRequest) {
       ? existing
       : (detectCountryFromLocaleTag(acceptLanguage) ?? undefined)
 
-  // Forzar el idioma según el país: hispanohablantes → es, resto → en
-  const targetLocale = country && isSpanishSpeakingCountry(country) ? "es" : "en"
+  // El idioma lo define el país (ver selector de países)
+  const targetLocale = country ? localeForCountry(country) : routing.defaultLocale
   const localizedRequest = new NextRequest(request.url, {
     headers: {
       ...Object.fromEntries(request.headers),

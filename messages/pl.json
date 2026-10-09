@@ -1,0 +1,351 @@
+{
+  "metadata": {
+    "title": "Lenio — Inteligentne miejsce pracy dla nauczycieli",
+    "titleTemplate": "%s · Lenio",
+    "description": "Planuj lekcje, oceniaj uczniów, automatyzuj zadania i korzystaj z agentów AI w jednym miejscu. Zacznij za darmo.",
+    "keywords": [
+      "workspace dla nauczycieli",
+      "platforma edukacyjna",
+      "narzędzia dla nauczycieli",
+      "planowanie lekcji",
+      "ocenianie szkolne",
+      "AI dla nauczycieli",
+      "szkoły"
+    ],
+    "ogTitle": "Lenio — Twoja praca nauczyciela, uporządkowana",
+    "ogDescription": "Inteligentne miejsce pracy, w którym planujesz, oceniasz i zarządzasz całą swoją pracą nauczyciela. Zacznij za darmo.",
+    "orgDescription": "Inteligentne miejsce pracy dla nauczycieli i szkół"
+  },
+  "nav": {
+    "product": "Produkt",
+    "features": "Funkcje",
+    "why": "Dlaczego Lenio",
+    "pricing": "Cennik",
+    "resources": "Zasoby",
+    "documentation": "Dokumentacja",
+    "documentationDescription": "Odkryj wszystkie funkcje",
+    "help": "Centrum pomocy",
+    "helpDescription": "Rozwiąż wątpliwości i znajdź szybkie poradniki",
+    "language": "Zmień język",
+    "languages": "Języki",
+    "spanish": "Hiszpański",
+    "english": "Angielski",
+    "openMenu": "Otwórz menu",
+    "startNow": "Zacznij za darmo",
+    "schools": "Lenio Schools"
+  },
+  "hero": {
+    "badge": "Wszystko w jednym dla nauczycieli",
+    "title": {
+      "part1": "Inteligentne",
+      "part2": "miejsce",
+      "part3": "pracy",
+      "part4": "dla nauczycieli i szkół"
+    },
+    "subtitle": " Planuj lekcje, oceniaj uczniów, automatyzuj zadania i wykorzystaj sztuczną inteligencję, aby poświęcić więcej czasu nauczaniu. Zacznij za darmo.",
+    "trustNote": "Za darmo · Bez karty · Gotowe w 2 min",
+    "ctaStart": "Utwórz darmowe konto",
+    "ctaDemo": "Zobacz demo",
+    "teachersLabel": "Nauczyciele",
+    "iso": "Zgodne ze standardami ISO 9001"
+  },
+  "funcionalidades": {
+    "introTitle": "Wszystko, czego potrzebujesz do nauczania.",
+    "introSubtitle": "Platforma zaprojektowana wokół realnej pracy nauczyciela.",
+    "discoverAll": "Odkryj wszystkie funkcje",
+    "explore": "Eksploruj",
+    "ecosystem": "Ekosystem",
+    "prevFeature": "Poprzednia funkcja",
+    "nextFeature": "Następna funkcja",
+    "viewFeature": "Zobacz {title}",
+    "mockups": {
+      "workspaces": {
+        "frameTitle": "Jedno środowisko pracy na każdy kontekst",
+        "alt": "Środowiska pracy w Lenio"
+      },
+      "repository": {
+        "frameTitle": "Centralne Archiwum",
+        "alt": "Centralne Archiwum w Lenio"
+      },
+      "teams": {
+        "frameTitle": "Zespoły Współpracujące",
+        "alt": "Zespoły Współpracujące w Lenio"
+      },
+      "classes": {
+        "frameTitle": "Operacyjna Przestrzeń Klasy",
+        "alt": "Operacyjna Przestrzeń Klasy w Lenio"
+      },
+      "inbox": {
+        "frameTitle": "Skrzynka Pracy Nauczyciela",
+        "alt": "Skrzynka Pracy Nauczyciela w Lenio"
+      },
+      "builder": {
+        "frameTitle": "Kreator Szablonów typu Canva / Word",
+        "alt": "Kreator Szablonów w Lenio"
+      },
+      "ai": {
+        "frameTitle": "AI Kontekstualizowana do Programu Nauczania",
+        "alt": "Agenci AI w Lenio"
+      },
+      "agenda": {
+        "frameTitle": "Agenda Multi-Workspace",
+        "alt": "Agenda Multi-Workspace w Lenio"
+      }
+    },
+    "items": {
+      "workspaces": {
+        "title": "Środowiska pracy",
+        "highlight": "Twoja przestrzeń. Twój kontekst.",
+        "description": "Architektura koncepcyjna zaprojektowana, aby oddzielić i uporządkować zawodowe życie nauczyciela.",
+        "bullets": [
+          "Osobista przestrzeń na Twoją pracę nauczyciela.",
+          "Przestrzenie instytucjonalne do pracy ze szkołą.",
+          "Możesz należeć do wielu środowisk pracy.",
+          "Twoje dane osobiste zawsze pozostają przy Tobie.",
+          "Każdy workspace zachowuje własny kontekst, informacje i uprawnienia."
+        ],
+        "indicator": "Architektura Multi-Kontekstowa"
+      },
+      "repository": {
+        "title": "Archiwum",
+        "highlight": "Cała Twoja praca nauczyciela. W jednym miejscu.",
+        "description": "Praca nauczyciela nie powinna być rozproszona między folderami, czatami i e-mailami.",
+        "bullets": [
+          "Centralne archiwum zasobów i dokumentów.",
+          "Kontrola wersji, historia i możliwość śledzenia zmian.",
+          "Przepływy zgodne z procesami jakości i ISO.",
+          "Udostępniaj tylko to, czego potrzebujesz."
+        ],
+        "indicator": "ISO i Jakość Pracy Nauczyciela"
+      },
+      "teams": {
+        "title": "Zespoły",
+        "highlight": "Pracuj z osobami, których potrzebujesz.",
+        "description": "To nie zwykła grupa czatu; to prawdziwa przestrzeń współpracy z kontrolą przepływów.",
+        "bullets": [
+          "Koła badawcze i grupy studyjne.",
+          "Obszary akademickie i komisje instytucjonalne.",
+          "Projekty i zespoły pracy współpracującej.",
+          "Skuteczna kontrola przepływów i ról roboczych."
+        ],
+        "indicator": "Skuteczna Współpraca"
+      },
+      "classes": {
+        "title": "Klasy",
+        "highlight": "Wszystko, co dzieje się w klasie.",
+        "description": "Codzienna operacyjna przestrzeń nauczyciela skupiająca zarządzanie klasą.",
+        "bullets": [
+          "Planowanie dydaktyczne i sekwencjonowanie.",
+          "Rejestr obecności i oceny.",
+          "Tablica ogłoszeń i aktywności.",
+          "Kompleksowe monitorowanie ucznia i klasy."
+        ],
+        "indicator": "Operacyjna Przestrzeń Klasy"
+      },
+      "inbox": {
+        "title": "Inbox",
+        "highlight": "Cała Twoja komunikacja w jednym miejscu.",
+        "description": "Skrzynka przeznaczona dla pracy nauczyciela, nie kolejna nieformalna aplikacja do wiadomości.",
+        "bullets": [
+          "Komunikacja z zespołami i innymi nauczycielami.",
+          "Połączenie ze społecznością użytkowników Lenio.",
+          "Wiadomości ściśle związane z Twoją pracą."
+        ],
+        "indicator": "Skoncentrowana Komunikacja"
+      },
+      "builder": {
+        "title": "Kreator szablonów",
+        "highlight": "Twórz dokładnie takie szablony, jakich potrzebujesz.",
+        "description": "Wielokrotnego użytku edytor wizualny typu Word / Canva, pomyślany dla dokumentów szkolnych.",
+        "bullets": [
+          "Projektuj okólniki, programy i siatki oceniania.",
+          "Formularze oceniania, raporty i ankiety.",
+          "Utwórz szablon raz i wykorzystuj go ponownie lub modyfikuj.",
+          "Generuj egzemplarze lub jednorazowe dokumenty."
+        ],
+        "indicator": "Edytor Typu Canva / Word"
+      },
+      "ai": {
+        "title": "Agenci AI",
+        "description": "To AI kontekstualizowana do realnej pracy nauczyciela, z pamięcią Twojego środowiska.",
+        "bullets": [
+          "Ciągła pamięć kontekstowa Twojej przestrzeni osobistej i instytucjonalnej.",
+          "Rozumie Twoje klasy, historię, archiwum i wcześniejsze dokumenty.",
+          "Wyspecjalizowani agenci: Planista, Ewaluator, Zadania i Informacja zwrotna.",
+          "Zgodna z kontekstem Twojej szkoły i krajowym programem nauczania."
+        ]
+      },
+      "agenda": {
+        "title": "Agenda",
+        "highlight": "Także Twój czas należy do środowiska pracy.",
+        "description": "Każde środowisko pracy ma własną agendę, aby uporządkowanie zarządzać czasem.",
+        "bullets": [
+          "Podglądaj swój plan zajęć i zobowiązania.",
+          "Twórz wydarzenia i organizuj aktywności.",
+          "Zarządzaj wydarzeniami instytucjonalnymi workspace'a.",
+          "Niezależne konteksty kalendarza."
+        ],
+        "indicator": "Zarządzanie Czasem Multi-Workspace"
+      }
+    }
+  },
+  "cta": {
+    "title": "Zacznij korzystać z Lenio już dziś",
+    "subtitle": "Lenio to platforma zaprojektowana, aby doceniać pracę nauczyciela, integrować zespoły i wspierać procesy jakości. Utwórz swoją osobistą przestrzeń w kilka minut i korzystaj z funkcji, które odmienią Twoją codzienność.",
+    "button": "Zacznij za darmo",
+    "imageAlt": "Panel sterowania Lenio"
+  },
+  "precios": {
+    "title": "Cennik",
+    "monthly": "Miesięcznie",
+    "annual": "Rocznie",
+    "preferred": "Polecany",
+    "perMonth": "/ miesiąc",
+    "perYearMonths": "/ rok · 10 miesięcy",
+    "perSeatMonth": "/ miesiąc za {count, plural, one {# miejsce} few {# miejsca} other {# miejsc}}",
+    "perSeatYear": "/ rok za {count, plural, one {# miejsce} few {# miejsca} other {# miejsc}} · 10 miesięcy",
+    "seatsLabel": "Miejsca",
+    "addSeat": "Dodaj miejsce",
+    "removeSeat": "Usuń miejsce",
+    "editSeatsHint": "Kliknij, aby wpisać liczbę miejsc",
+    "docsNote": "Zobacz <link>dokumentację</link>, aby poznać limity, cechy i pełną specyfikację każdego planu.",
+    "plans": {
+      "lite": {
+        "subtitle": "Do uporządkowania swojej pracy nauczyciela.",
+        "groups": [
+          {
+            "category": "Nauczanie",
+            "items": [
+              "Osobiste środowisko pracy",
+              "Podstawowe zarządzanie klasami",
+              "Uczniowie i zadania",
+              "Podstawowe ocenianie",
+              "Podstawowe planowanie"
+            ]
+          },
+          {
+            "category": "AI",
+            "items": [
+              "10 kredytów AI miesięcznie",
+              "Dostęp do modeli podstawowych"
+            ]
+          }
+        ],
+        "cta": "Zacznij za darmo"
+      },
+      "go": {
+        "subtitle": "Do lepszej pracy i zarządzania.",
+        "includesText": "Wszystko, co zawiera Lite",
+        "groups": [
+          {
+            "category": "Nauczanie",
+            "items": [
+              "Więcej klas i uczniów",
+              "Ocenianie i rubryki",
+              "Monitoring postępów",
+              "Kompletne programy nauczania"
+            ]
+          },
+          {
+            "category": "AI",
+            "items": [
+              "150 kredytów AI miesięcznie",
+              "Dostęp do modeli podstawowych i standardowych",
+              "Predefiniowani agenci AI"
+            ]
+          }
+        ],
+        "cta": "Wybierz Go"
+      },
+      "pro": {
+        "subtitle": "Wzmocnij swoją pracę dzięki AI.",
+        "includesText": "Wszystko, co zawiera Go",
+        "groups": [
+          {
+            "category": "Zaawansowane AI",
+            "items": [
+              "400 kredytów AI miesięcznie",
+              "Dostęp do modeli zaawansowanych",
+              "Predefiniowani agenci AI",
+              "Twórz własnych agentów AI",
+              "Zaawansowana personalizacja agentów"
+            ]
+          },
+          {
+            "category": "Automatyzacja",
+            "items": [
+              "Zaawansowana analiza wyników",
+              "Automatyzacje z AI"
+            ]
+          }
+        ],
+        "cta": "Wybierz Pro"
+      },
+      "school": {
+        "subtitle": "Dla instytucji edukacyjnych.",
+        "groups": [
+          {
+            "category": "Workspace i instytucja",
+            "items": [
+              "Instytucjonalne środowisko pracy",
+              "Zarządzanie nauczycielami i zespołami",
+              "Własne role i uprawnienia"
+            ]
+          },
+          {
+            "category": "Organizacja i AI",
+            "items": [
+              "Centralna administracja i miejsca",
+              "Zasoby i AI instytucjonalna"
+            ]
+          }
+        ],
+        "cta": "Zacznij z School"
+      }
+    }
+  },
+  "countrySelector": {
+    "label": "Zmień kraj i walutę · {country} ({currency})",
+    "searchPlaceholder": "Szukaj kraju lub waluty…",
+    "noResults": "Brak wyników"
+  },
+  "footer": {
+    "ctaTitle": "Zacznij upraszczać swój dzień nauczyciela",
+    "ctaSubtitle": "Utwórz swoje osobiste konto za darmo albo umów demo dla swojej szkoły.",
+    "ctaButton": "Zacznij za darmo",
+    "bio": "Lenio to platforma edukacyjna tworzona przez nauczycieli i dla nauczycieli, budowana z pasją przez <link>Zespół Ceti</link>.",
+    "countryRegion": "Kraj / Region:",
+    "productTitle": "Produkt",
+    "productItems": [
+      "Środowiska pracy",
+      "Archiwum",
+      "Zespoły",
+      "Klasy",
+      "Inbox",
+      "Kreator szablonów",
+      "Agenci AI",
+      "Agenda"
+    ],
+    "companyTitle": "Firma",
+    "aboutCeti": "Kim jest Zespół Ceti",
+    "blog": "Blog firmowy",
+    "contact": "Kontakt",
+    "resourcesTitle": "Zasoby",
+    "docs": "Dokumentacja",
+    "helpFaq": "Centrum pomocy / FAQ",
+    "guides": "Poradniki dla nauczycieli",
+    "community": "Społeczność Nauczycieli",
+    "changelog": "Nowości / Changelog",
+    "status": "Status systemu",
+    "legalTitle": "Informacje prawne i prywatność",
+    "terms": "Regulamin i warunki",
+    "privacy": "Polityka prywatności",
+    "dataProtection": "Przetwarzanie danych (Ustawa 1581)",
+    "cookies": "Polityka plików cookie",
+    "sla": "Poziom usług (SLA)",
+    "security": "Bezpieczeństwo informacji",
+    "credits": "Licencje / Zasługi",
+    "rights": "© {year} Ceti Team S.A.S. Wszelkie prawa zastrzeżone.",
+    "madeIn": "Stworzone z oddaniem w Bogocie, Kolumbia."
+  }
+}

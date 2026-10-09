@@ -19,6 +19,15 @@ const fontMono = Geist_Mono({
   variable: "--font-mono",
 })
 
+const OG_LOCALES: Record<string, string> = {
+  es: "es_CO",
+  en: "en_US",
+  pt: "pt_BR",
+  it: "it_IT",
+  pl: "pl_PL",
+  ro: "ro_RO",
+}
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
 }
@@ -33,6 +42,18 @@ export async function generateMetadata({
   const url = siteConfig.url
   const isDefault = locale === routing.defaultLocale
   const basePath = isDefault ? "" : `/${locale}`
+  const ogLocale = OG_LOCALES[locale] ?? OG_LOCALES[routing.defaultLocale]
+  const ogAlternateLocale = routing.locales
+    .filter((l) => l !== locale)
+    .map((l) => OG_LOCALES[l])
+    .filter(Boolean)
+  const languages = Object.fromEntries([
+    ...routing.locales.map((l) => [
+      l,
+      l === routing.defaultLocale ? `${url}/` : `${url}/${l}`,
+    ]),
+    ["x-default", `${url}/`],
+  ])
 
   return {
     metadataBase: new URL(url),
@@ -44,16 +65,12 @@ export async function generateMetadata({
     keywords: t.raw("keywords"),
     alternates: {
       canonical: `${url}${basePath}/`,
-      languages: {
-        "es-CO": `${url}/`,
-        en: `${url}/en`,
-        "x-default": `${url}/`,
-      },
+      languages,
     },
     openGraph: {
       type: "website",
-      locale: "es_CO",
-      alternateLocale: ["en_US"],
+      locale: ogLocale,
+      alternateLocale: ogAlternateLocale,
       url: `${url}${basePath}/`,
       siteName: siteConfig.name,
       title: t("ogTitle"),
@@ -106,6 +123,9 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale)
   const messages = await getMessages()
+  const tMeta = await getTranslations({ locale, namespace: "metadata" })
+  const url = siteConfig.url
+  const appDescription = tMeta("orgDescription")
 
   return (
     <html
@@ -129,12 +149,34 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              name: siteConfig.name,
-              url: siteConfig.url,
-              logo: `${siteConfig.url}/favicon.ico`,
-              description: "CETI OS",
-              email: siteConfig.contactEmail,
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  name: siteConfig.name,
+                  url: url,
+                  logo: `${url}/favicon.ico`,
+                  description: appDescription,
+                  email: siteConfig.contactEmail,
+                },
+                {
+                  "@type": "WebSite",
+                  name: siteConfig.name,
+                  url: url,
+                },
+                {
+                  "@type": "SoftwareApplication",
+                  name: siteConfig.name,
+                  applicationCategory: "EducationalApplication",
+                  operatingSystem: "Web",
+                  url: url,
+                  description: appDescription,
+                  offers: {
+                    "@type": "Offer",
+                    price: "0",
+                    priceCurrency: "USD",
+                  },
+                },
+              ],
             }),
           }}
         />

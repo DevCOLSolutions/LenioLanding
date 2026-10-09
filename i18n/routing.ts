@@ -2,7 +2,7 @@ import { defineRouting } from "next-intl/routing"
 import { createNavigation } from "next-intl/navigation"
 
 export const routing = defineRouting({
-  locales: ["es", "en"],
+  locales: ["es", "en", "pt", "it", "pl", "ro"],
   defaultLocale: "es",
   localePrefix: "as-needed",
   // El idioma se decide por país (cookie lenio_country), no por una cookie de idioma

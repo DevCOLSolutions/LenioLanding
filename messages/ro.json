@@ -1,0 +1,351 @@
+{
+  "metadata": {
+    "title": "Lenio — Spațiu de lucru inteligent pentru profesori",
+    "titleTemplate": "%s · Lenio",
+    "description": "Planifică lecții, evaluează elevii, automatizează sarcinile și folosește agenți AI într-un singur loc. Începe gratuit.",
+    "keywords": [
+      "spațiu de lucru pentru profesori",
+      "platformă educațională",
+      "instrumente pentru profesori",
+      "planificarea lecțiilor",
+      "evaluare școlară",
+      "IA pentru profesori",
+      "școli"
+    ],
+    "ogTitle": "Lenio — Munca ta de profesor, organizată",
+    "ogDescription": "Un spațiu de lucru inteligent unde planifici, evaluezi și gestionezi toată munca ta de profesor. Începe gratuit.",
+    "orgDescription": "Spațiul de lucru inteligent pentru profesori și școli"
+  },
+  "nav": {
+    "product": "Produs",
+    "features": "Funcții",
+    "why": "De ce Lenio",
+    "pricing": "Prețuri",
+    "resources": "Resurse",
+    "documentation": "Documentație",
+    "documentationDescription": "Descoperă toate funcțiile",
+    "help": "Centru de ajutor",
+    "helpDescription": "Rezolvă nelămuririle și găsește ghiduri rapide",
+    "language": "Schimbă limba",
+    "languages": "Limbi",
+    "spanish": "Spaniolă",
+    "english": "Engleză",
+    "openMenu": "Deschide meniul",
+    "startNow": "Începe gratuit",
+    "schools": "Lenio Schools"
+  },
+  "hero": {
+    "badge": "Totul într-unul pentru profesori",
+    "title": {
+      "part1": "Un",
+      "part2": "spațiu de lucru",
+      "part3": "inteligent",
+      "part4": "pentru profesori și școli"
+    },
+    "subtitle": " Planifică lecții, evaluează elevii, automatizează sarcinile și valorifică la maximum inteligența artificială pentru a dedica mai mult timp predării. Începe gratuit.",
+    "trustNote": "Gratuit · Fără card · Gata în 2 min",
+    "ctaStart": "Creează cont gratuit",
+    "ctaDemo": "Vezi demo",
+    "teachersLabel": "Profesori",
+    "iso": "Aliniat standardelor ISO 9001"
+  },
+  "funcionalidades": {
+    "introTitle": "Tot ce îți trebuie pentru a preda.",
+    "introSubtitle": "O platformă proiectată în jurul muncii reale a profesorului.",
+    "discoverAll": "Descoperă toate funcțiile",
+    "explore": "Explorează",
+    "ecosystem": "Ecosistem",
+    "prevFeature": "Funcția anterioară",
+    "nextFeature": "Funcția următoare",
+    "viewFeature": "Vezi {title}",
+    "mockups": {
+      "workspaces": {
+        "frameTitle": "Un spațiu de lucru pentru fiecare context",
+        "alt": "Spații de lucru în Lenio"
+      },
+      "repository": {
+        "frameTitle": "Arhivă Centralizată",
+        "alt": "Arhivă Centralizată în Lenio"
+      },
+      "teams": {
+        "frameTitle": "Echipe Colaborative",
+        "alt": "Echipe Colaborative în Lenio"
+      },
+      "classes": {
+        "frameTitle": "Spațiul Operațional al Clasei",
+        "alt": "Spațiul Operațional al Clasei în Lenio"
+      },
+      "inbox": {
+        "frameTitle": "Cutia Muncii Profesorului",
+        "alt": "Cutia Muncii Profesorului în Lenio"
+      },
+      "builder": {
+        "frameTitle": "Creator de Șabloane tip Canva / Word",
+        "alt": "Creator de Șabloane în Lenio"
+      },
+      "ai": {
+        "frameTitle": "IA Contextualizată la Curriculum",
+        "alt": "Agenți IA în Lenio"
+      },
+      "agenda": {
+        "frameTitle": "Agendă Multi-Workspace",
+        "alt": "Agendă Multi-Workspace în Lenio"
+      }
+    },
+    "items": {
+      "workspaces": {
+        "title": "Spații de lucru",
+        "highlight": "Spațiul tău. Contextul tău.",
+        "description": "Arhitectură conceptuală proiectată pentru a separa și organiza viața profesională a profesorilor.",
+        "bullets": [
+          "Spațiu personal pentru munca ta de profesor.",
+          "Spații instituționale pentru a lucra cu școala ta.",
+          "Poți aparține mai multor spații de lucru.",
+          "Informațiile tale personale rămân mereu cu tine.",
+          "Fiecare workspace își păstrează propriul context, informațiile și permisiunile."
+        ],
+        "indicator": "Arhitectură Multi-Contextuală"
+      },
+      "repository": {
+        "title": "Arhivă",
+        "highlight": "Toată munca ta de profesor. Într-un singur loc.",
+        "description": "Munca profesorului nu ar trebui să fie risipită între dosare, chat-uri și e-mailuri.",
+        "bullets": [
+          "Arhivă centralizată de resurse și documente.",
+          "Control al versiunilor, istoric și trasabilitate.",
+          "Fluxuri compatibile cu procesele de calitate și ISO.",
+          "Partajează doar ceea ce îți trebuie."
+        ],
+        "indicator": "ISO și Calitate Didactică"
+      },
+      "teams": {
+        "title": "Echipe",
+        "highlight": "Lucrează cu persoanele de care ai nevoie.",
+        "description": "Nu este un simplu grup de chat; este un spațiu colaborativ adevărat, cu control al fluxurilor.",
+        "bullets": [
+          "Cercuri de cercetare și grupuri de studiu.",
+          "Arii academice și comisii instituționale.",
+          "Proiecte și echipe de lucru colaborativ.",
+          "Control eficient al fluxurilor și rolurilor de lucru."
+        ],
+        "indicator": "Colaborare Eficientă"
+      },
+      "classes": {
+        "title": "Clase",
+        "highlight": "Tot ce se întâmplă în clasă.",
+        "description": "Spațiul operațional zilnic al profesorului care concentrează gestionarea clasei.",
+        "bullets": [
+          "Planificare didactică și secvențiere.",
+          "Registru de prezență și evaluări.",
+          "Panou de anunțuri și activități.",
+          "Urmărire completă a elevului și a clasei."
+        ],
+        "indicator": "Spațiul Operațional al Clasei"
+      },
+      "inbox": {
+        "title": "Inbox",
+        "highlight": "Toată comunicarea ta, într-un singur loc.",
+        "description": "O cutie dedicată muncii profesorului, nu o altă aplicație informală de mesagerie.",
+        "bullets": [
+          "Comunicare cu echipele tale și alți profesori.",
+          "Conexiune cu comunitatea de utilizatori Lenio.",
+          "Mesaje strâns legate de munca ta."
+        ],
+        "indicator": "Comunicare Concentrată"
+      },
+      "builder": {
+        "title": "Creator de șabloane",
+        "highlight": "Creează exact șabloanele de care ai nevoie.",
+        "description": "Editor vizual reutilizabil tip Word / Canva, gândit pentru documentele școlare.",
+        "bullets": [
+          "Proiectează circulare, programe și grile de evaluare.",
+          "Formulare de evaluare, rapoarte și chestionare.",
+          "Creează un șablon o dată și refolosește-l sau modifică-l.",
+          "Generează exemplare sau documente de unică folosință."
+        ],
+        "indicator": "Editor Tip Canva / Word"
+      },
+      "ai": {
+        "title": "Agenți IA",
+        "description": "Este IA contextualizată la munca reală a profesorului, cu memorie a mediului tău.",
+        "bullets": [
+          "Memorie contextuală continuă a spațiului tău personal și instituțional.",
+          "Înțelege clasele tale, istoricul, arhiva și documentele anterioare.",
+          "Agenți specializați: Planificator, Evaluator, Activități și Feedback.",
+          "Aliniată contextului școlii tale și curriculumului național."
+        ]
+      },
+      "agenda": {
+        "title": "Agendă",
+        "highlight": "Și timpul tău face parte din spațiul de lucru.",
+        "description": "Fiecare workspace își păstrează propria agendă pentru a gestiona timpul în mod ordonat.",
+        "bullets": [
+          "Vizualizează orarul și obligațiile tale.",
+          "Creează evenimente și organizează activități.",
+          "Gestionează evenimentele instituționale ale workspace-ului.",
+          "Mai multe contexte de calendar independente."
+        ],
+        "indicator": "Gestionarea Timpului Multi-Spațiu"
+      }
+    }
+  },
+  "cta": {
+    "title": "Începe să folosești Lenio astăzi",
+    "subtitle": "Lenio este platforma proiectată pentru a valorifica munca didactică, a integra echipele și a susține procesele de calitate. Creează-ți spațiul personal în câteva minute și conectează-te la funcții gândite pentru a-ți transforma ziua de lucru.",
+    "button": "Începe gratuit",
+    "imageAlt": "Panoul de control Lenio"
+  },
+  "precios": {
+    "title": "Prețuri",
+    "monthly": "Lunar",
+    "annual": "Anual",
+    "preferred": "Preferat",
+    "perMonth": "/ lună",
+    "perYearMonths": "/ an · 10 luni",
+    "perSeatMonth": "/ lună pentru {count, plural, one {# loc} few {# locuri} other {# de locuri}}",
+    "perSeatYear": "/ an pentru {count, plural, one {# loc} few {# locuri} other {# de locuri}} · 10 luni",
+    "seatsLabel": "Locuri",
+    "addSeat": "Adaugă un loc",
+    "removeSeat": "Elimină un loc",
+    "editSeatsHint": "Faceți clic pentru a introduce numărul de locuri",
+    "docsNote": "Consultă <link>documentația</link> pentru a cunoaște limitele, caracteristicile și specificațiile complete ale fiecărui plan.",
+    "plans": {
+      "lite": {
+        "subtitle": "Pentru a-ți organiza munca de profesor.",
+        "groups": [
+          {
+            "category": "Predare",
+            "items": [
+              "Spațiu de lucru personal",
+              "Gestionare de bază a claselor",
+              "Elevi și activități",
+              "Evaluare de bază",
+              "Planificare de bază"
+            ]
+          },
+          {
+            "category": "IA",
+            "items": [
+              "10 credite IA lunar",
+              "Acces la modelele de bază"
+            ]
+          }
+        ],
+        "cta": "Începe gratuit"
+      },
+      "go": {
+        "subtitle": "Pentru a munci și a gestiona mai bine.",
+        "includesText": "Tot ce include Lite",
+        "groups": [
+          {
+            "category": "Predare",
+            "items": [
+              "Mai multe clase și elevi",
+              "Evaluări și grile de evaluare",
+              "Monitorizare academică",
+              "Programe complete"
+            ]
+          },
+          {
+            "category": "IA",
+            "items": [
+              "150 credite IA lunar",
+              "Acces la modele de bază și standard",
+              "Agenți IA predefiniți"
+            ]
+          }
+        ],
+        "cta": "Alege Go"
+      },
+      "pro": {
+        "subtitle": "Pentru a-ți potența munca cu IA.",
+        "includesText": "Tot ce include Go",
+        "groups": [
+          {
+            "category": "IA avansată",
+            "items": [
+              "400 credite IA lunar",
+              "Acces la modelele avansate",
+              "Agenți IA predefiniți",
+              "Creează-ți proprii agenți IA",
+              "Personalizare avansată a agenților"
+            ]
+          },
+          {
+            "category": "Automatizare",
+            "items": [
+              "Analiză avansată a performanței",
+              "Automatizări cu IA"
+            ]
+          }
+        ],
+        "cta": "Alege Pro"
+      },
+      "school": {
+        "subtitle": "Pentru instituțiile de învățământ.",
+        "groups": [
+          {
+            "category": "Workspace și instituție",
+            "items": [
+              "Spațiu de lucru instituțional",
+              "Gestionarea profesorilor și echipelor",
+              "Roluri și permisiuni personalizate"
+            ]
+          },
+          {
+            "category": "Organizație și IA",
+            "items": [
+              "Administrare centralizată și locuri",
+              "Resurse și IA instituțională"
+            ]
+          }
+        ],
+        "cta": "Începe cu School"
+      }
+    }
+  },
+  "countrySelector": {
+    "label": "Schimbă țara și moneda · {country} ({currency})",
+    "searchPlaceholder": "Caută țară sau valută…",
+    "noResults": "Niciun rezultat"
+  },
+  "footer": {
+    "ctaTitle": "Începe să-ți simplifici ziua de profesor",
+    "ctaSubtitle": "Creează-ți contul personal gratuit sau rezervă un demo pentru școala ta.",
+    "ctaButton": "Începe gratuit",
+    "bio": "Lenio este platforma educațională făcută de și pentru profesori, construită cu pasiune de <link>Ceti Team</link>.",
+    "countryRegion": "Țara / Regiunea:",
+    "productTitle": "Produs",
+    "productItems": [
+      "Spații de lucru",
+      "Arhivă",
+      "Echipe",
+      "Clase",
+      "Inbox",
+      "Creator de șabloane",
+      "Agenți IA",
+      "Agendă"
+    ],
+    "companyTitle": "Companie",
+    "aboutCeti": "Cine este Ceti Team",
+    "blog": "Blog corporativ",
+    "contact": "Contact",
+    "resourcesTitle": "Resurse",
+    "docs": "Documentație",
+    "helpFaq": "Centru de ajutor / FAQ",
+    "guides": "Ghiduri pentru profesori",
+    "community": "Comunitatea Profesorilor",
+    "changelog": "Noutăți / Changelog",
+    "status": "Starea sistemului",
+    "legalTitle": "Aspecte legale și confidențialitate",
+    "terms": "Termeni și condiții",
+    "privacy": "Politica de confidențialitate",
+    "dataProtection": "Tratarea datelor (Legea 1581)",
+    "cookies": "Politica de cookie-uri",
+    "sla": "Nivel de serviciu (SLA)",
+    "security": "Securitatea informației",
+    "credits": "Licențe / Credite",
+    "rights": "© {year} Ceti Team S.A.S. Toate drepturile rezervate.",
+    "madeIn": "Realizat cu dedicație în Bogotá, Columbia."
+  }
+}

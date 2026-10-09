@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
-import { externalLinks } from "@/lib/externalLinks";
+import { useTranslations } from "next-intl";
+import { externalLinks, withUtm } from "@/lib/externalLinks";
 import { CountrySelector } from "@/components/country/country-selector";
 import {
   ArrowUpRight,
@@ -13,7 +14,9 @@ import {
 import { Button } from "../ui/button";
 
 export function Footer() {
+  const t = useTranslations("footer");
   const currentYear = new Date().getFullYear();
+  const productItems = t.raw("productItems") as string[];
 
   return (
     <footer className="relative border-t border-neutral-200/80 bg-white text-neutral-700">
@@ -23,20 +26,20 @@ export function Footer() {
       <div className="border-b border-neutral-200/80 bg-gradient-to-r from-[#19303E] to-[#1D5969] px-6 py-8 sm:px-8 sm:py-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 text-center md:flex-row md:text-left">
           <div className="space-y-1">
-            <h3 className="text-xl font-bold tracking-tight text-white sm:text-2xl">
-              Comienza a simplificar tu día a día como docente
-            </h3>
+            <h2 className="text-xl font-bold tracking-tight text-white sm:text-2xl">
+              {t("ctaTitle")}
+            </h2>
             <p className="text-xs text-neutral-200 sm:text-sm">
-              Crea tu cuenta personal gratis o agenda una demostración para tu colegio.
+              {t("ctaSubtitle")}
             </p>
           </div>
           <div className="flex w-full flex-wrap items-center justify-center gap-3 sm:w-auto">
-            <Link href={externalLinks.app} target="_blank" rel="noopener noreferrer">
+            <Link href={withUtm(externalLinks.app, "footer")} target="_blank" rel="noopener noreferrer">
               <Button
                 variant="secondary"
                 className="inline-flex h-10 items-center gap-2 px-6 shadow-md transition-all hover:shadow-lg"
               >
-                Empieza gratis <ArrowUpRight className="h-4 w-4" />
+                {t("ctaButton")} <ArrowUpRight className="h-4 w-4" />
               </Button>
             </Link>
           </div>
@@ -64,16 +67,18 @@ export function Footer() {
             </div>
 
             <p className="max-w-sm text-xs leading-relaxed text-neutral-600 sm:max-w-none">
-              Lenio es la plataforma educativa hecha por y para docentes,
-              construida con pasión por{" "}
-              <strong className="cursor-pointer font-medium text-[#19303E] underline">
-                Ceti Team
-              </strong>.
+              {t.rich("bio", {
+                link: (chunks) => (
+                  <strong className="cursor-pointer font-medium text-[#19303E] underline">
+                    {chunks}
+                  </strong>
+                ),
+              })}
             </p>
 
             <div className="pt-2">
               <div className="mb-1.5 flex items-center gap-1.5 text-[11px] font-medium text-neutral-500">
-                <Globe2 className="h-3.5 w-3.5 text-[#19303E]" /> País / Región:
+                <Globe2 className="h-3.5 w-3.5 text-[#19303E]" /> {t("countryRegion")}
               </div>
               <CountrySelector />
             </div>
@@ -81,58 +86,25 @@ export function Footer() {
 
           {/* 2. Columna Producto (8 Funcionalidades) */}
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold text-[#19303E]">Producto</h4>
+            <h4 className="text-sm font-semibold text-[#19303E]">{t("productTitle")}</h4>
             <ul className="space-y-2 text-xs text-neutral-600">
-              <li>
-                <Link href="#features" className="transition-colors hover:text-neutral-900">
-                  Espacios de trabajo
-                </Link>
-              </li>
-              <li>
-                <Link href="#features" className="transition-colors hover:text-neutral-900">
-                  Repositorio
-                </Link>
-              </li>
-              <li>
-                <Link href="#features" className="transition-colors hover:text-neutral-900">
-                  Equipos
-                </Link>
-              </li>
-              <li>
-                <Link href="#features" className="transition-colors hover:text-neutral-900">
-                  Clases
-                </Link>
-              </li>
-              <li>
-                <Link href="#features" className="transition-colors hover:text-neutral-900">
-                  Inbox
-                </Link>
-              </li>
-              <li>
-                <Link href="#features" className="transition-colors hover:text-neutral-900">
-                  Constructor de formatos
-                </Link>
-              </li>
-              <li>
-                <Link href="#features" className="transition-colors hover:text-neutral-900">
-                  Agentes de IA
-                </Link>
-              </li>
-              <li>
-                <Link href="#features" className="transition-colors hover:text-neutral-900">
-                  Agenda
-                </Link>
-              </li>
+              {productItems.map((item) => (
+                <li key={item}>
+                  <Link href="#features" className="transition-colors hover:text-neutral-900">
+                    {item}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* 3. Columna Compañía */}
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold text-[#19303E]">Compañía</h4>
+            <h4 className="text-sm font-semibold text-[#19303E]">{t("companyTitle")}</h4>
             <ul className="space-y-2 text-xs text-neutral-600">
               <li>
                 <Link href={externalLinks.contacto} className="transition-colors hover:text-neutral-900">
-                  Sobre Ceti Team
+                  {t("aboutCeti")}
                 </Link>
               </li>
               <li>
@@ -142,12 +114,12 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-neutral-900"
                 >
-                  Blog institucional
+                  {t("blog")}
                 </a>
               </li>
               <li>
                 <Link href={externalLinks.contacto} className="transition-colors hover:text-neutral-900">
-                  Contacto
+                  {t("contact")}
                 </Link>
               </li>
             </ul>
@@ -155,21 +127,21 @@ export function Footer() {
 
           {/* 4. Columna Recursos */}
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold text-[#19303E]">Recursos</h4>
+            <h4 className="text-sm font-semibold text-[#19303E]">{t("resourcesTitle")}</h4>
             <ul className="space-y-2 text-xs text-neutral-600">
               <li>
                 <Link href={externalLinks.centroAyuda} target="_blank" className="transition-colors hover:text-neutral-900">
-                  Documentación
+                  {t("docs")}
                 </Link>
               </li>
               <li>
                 <Link href={externalLinks.centroAyuda} target="_blank" className="transition-colors hover:text-neutral-900">
-                  Centro de ayuda / FAQ
+                  {t("helpFaq")}
                 </Link>
               </li>
               <li>
                 <Link href={externalLinks.documentacion} target="_blank" className="transition-colors hover:text-neutral-900">
-                  Guías para docentes
+                  {t("guides")}
                 </Link>
               </li>
               <li>
@@ -179,17 +151,17 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-neutral-900"
                 >
-                  Comunidad de Docentes
+                  {t("community")}
                 </a>
               </li>
               <li>
                 <Link href="#features" className="transition-colors hover:text-neutral-900">
-                  Novedades / Changelog
+                  {t("changelog")}
                 </Link>
               </li>
               <li>
                 <Link href="#features" className="transition-colors hover:text-neutral-900">
-                  Estado del sistema
+                  {t("status")}
                 </Link>
               </li>
             </ul>
@@ -197,41 +169,41 @@ export function Footer() {
 
           {/* 5. Columna Legal */}
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold text-[#19303E]">Legal & Privacidad</h4>
+            <h4 className="text-sm font-semibold text-[#19303E]">{t("legalTitle")}</h4>
             <ul className="space-y-2 text-xs text-neutral-600">
               <li>
                 <a href="https://policies.ceti.team/terms" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-neutral-900">
-                  Términos y condiciones
+                  {t("terms")}
                 </a>
               </li>
               <li>
                 <a href="https://policies.ceti.team/privacy" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-neutral-900">
-                  Política de privacidad
+                  {t("privacy")}
                 </a>
               </li>
               <li>
                 <a href="https://policies.ceti.team/habeas-data" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-neutral-900">
-                  Tratamiento de datos (Ley 1581)
+                  {t("dataProtection")}
                 </a>
               </li>
               <li>
                 <a href="https://policies.ceti.team/cookies" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-neutral-900">
-                  Política de cookies
+                  {t("cookies")}
                 </a>
               </li>
               <li>
                 <a href="https://policies.ceti.team/sla" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-neutral-900">
-                  Nivel de Servicio (SLA)
+                  {t("sla")}
                 </a>
               </li>
               <li>
                 <a href="https://policies.ceti.team/seguridad" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-neutral-900">
-                  Seguridad de la información
+                  {t("security")}
                 </a>
               </li>
               <li>
                 <a href="https://policies.ceti.team/creditos" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-neutral-900">
-                  Licencias / Créditos
+                  {t("credits")}
                 </a>
               </li>
             </ul>
@@ -245,8 +217,8 @@ export function Footer() {
       <div className="border-t border-neutral-200/80 bg-neutral-50 px-6 py-6 sm:px-8">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
           <div className="space-y-1 text-xs text-neutral-600">
-            <p>© {currentYear} Ceti Team S.A.S. Todos los derechos reservados.</p>
-            <p className="text-neutral-500">Hecho con dedicación en Bogotá, Colombia.</p>
+            <p>{t("rights", { year: currentYear })}</p>
+            <p className="text-neutral-500">{t("madeIn")}</p>
           </div>
 
           {/* Iconos Redes Sociales */}

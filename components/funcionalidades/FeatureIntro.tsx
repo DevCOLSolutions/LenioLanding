@@ -2,6 +2,7 @@
 
 import { useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -24,137 +25,20 @@ type MockupKind =
   | "ai"
   | "agenda";
 
-interface FeatureContent {
+interface FeatureMeta {
   id: string;
-  title: string;
-  highlight?: string;
-  description?: string;
-  bullets?: string[];
-  indicator?: string;
-  stat?: { value: string; label: string };
   mockup?: MockupKind;
-  aiPrompt?: string;
 }
 
-const features: FeatureContent[] = [
-  {
-    id: "workspaces",
-    title: "Espacios de trabajo",
-    highlight: "Tu espacio. Tu contexto.",
-    description:
-      "Arquitectura conceptual diseñada para separar y organizar la vida docente.",
-    bullets: [
-      "Espacio personal para tu trabajo docente.",
-      "Espacios institucionales para trabajar con tu colegio.",
-      "Puedes pertenecer a varios espacios de trabajo.",
-      "Tu información personal permanece contigo siempre.",
-      "Cada workspace mantiene su contexto, información y permisos.",
-    ],
-    indicator: "Arquitectura Multi-Contexto",
-    mockup: "workspaces",
-  },
-  {
-    id: "repository",
-    title: "Repositorio",
-    highlight: "Todo tu trabajo docente. En un solo lugar.",
-    description:
-      "Tu trabajo docente no debería estar repartido entre carpetas, chats y correos.",
-    bullets: [
-      "Repositorio centralizado de recursos y documentos.",
-      "Control de versiones, historial y trazabilidad.",
-      "Flujos compatibles con procesos de calidad e ISO.",
-      "Comparte únicamente lo que necesites.",
-    ],
-    indicator: "ISO & Calidad Docente",
-    mockup: "repository",
-  },
-  {
-    id: "teams",
-    title: "Equipos",
-    highlight: "Trabaja con las personas que necesitas.",
-    description:
-      "No es simplemente un grupo de chat; es un verdadero espacio colaborativo con control de flujos.",
-    bullets: [
-      "Semilleros de investigación y grupos de estudio.",
-      "Áreas académicas y comités institucionales.",
-      "Proyectos y equipos de trabajo colaborativo.",
-      "Control efectivo de flujos y roles de trabajo.",
-    ],
-    indicator: "Colaboración Efectiva",
-    mockup: "teams",
-  },
-  {
-    id: "classes",
-    title: "Clases",
-    highlight: "Todo lo que ocurre en el aula.",
-    description:
-      "El espacio operativo diario del docente que concentra la gestión del grupo.",
-    bullets: [
-      "Planeación didáctica y secuenciación.",
-      "Registro de asistencia y calificaciones.",
-      "Tablero de anuncios y actividades.",
-      "Seguimiento integral del estudiante y del grupo.",
-    ],
-    indicator: "Espacio Operativo de Aula",
-    mockup: "classes",
-  },
-  {
-    id: "inbox",
-    title: "Inbox",
-    highlight: "Toda tu comunicación, en un solo lugar.",
-    description:
-      "Una bandeja para el trabajo docente, no otra aplicación de mensajería informal.",
-    bullets: [
-      "Comunicación con tus equipos y otros docentes.",
-      "Conexión con la comunidad de usuarios de Lenio.",
-      "Mensajes relacionados estrictamente con tu trabajo.",
-    ],
-    indicator: "Comunicación Enfocada",
-    mockup: "inbox",
-  },
-  {
-    id: "builder",
-    title: "Constructor de formatos",
-    highlight: "Crea exactamente los formatos que necesitas.",
-    description:
-      "Editor visual reutilizable tipo Word / Canva diseñado para documentos escolares.",
-    bullets: [
-      "Diseña circulares, planeaciones y rúbricas.",
-      "Formatos de evaluación, informes y formularios.",
-      "Crea un formato una vez y reutilízalo o modifícalo.",
-      "Genera instancias o documentos de un solo uso.",
-    ],
-    indicator: "Editor Tipo Canva / Word",
-    mockup: "builder",
-  },
-  {
-    id: "ai",
-    title: "Agentes de IA",
-    description:
-      "Es IA contextualizada al trabajo real del docente con memoria de tu entorno.",
-    bullets: [
-      "Memoria contextual continua de tu espacio personal e institucional.",
-      "Entiende tus clases, historial, repositorio y documentos previos.",
-      "Agentes especializados: Planeador, Evaluador, Actividades y Retroalimentación.",
-      "Alineada al contexto de tu colegio y al marco curricular nacional.",
-    ],
-    mockup: "ai",
-  },
-  {
-    id: "agenda",
-    title: "Agenda",
-    highlight: "Tu tiempo también pertenece al workspace.",
-    description:
-      "Cada workspace mantiene su propia agenda para gestionar el tiempo de forma ordenada.",
-    bullets: [
-      "Visualiza tu horario y compromisos.",
-      "Crea eventos y organiza actividades.",
-      "Gestiona los eventos institucionales del workspace.",
-      "Diferentes contextos de calendario independientes.",
-    ],
-    indicator: "Gestión de Tiempo Multi-Espacio",
-    mockup: "agenda",
-  },
+const features: FeatureMeta[] = [
+  { id: "workspaces", mockup: "workspaces" },
+  { id: "repository", mockup: "repository" },
+  { id: "teams", mockup: "teams" },
+  { id: "classes", mockup: "classes" },
+  { id: "inbox", mockup: "inbox" },
+  { id: "builder", mockup: "builder" },
+  { id: "ai", mockup: "ai" },
+  { id: "agenda", mockup: "agenda" },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -188,12 +72,13 @@ function MockupFrame({
 }
 
 function WorkspacesMockup() {
+  const t = useTranslations("funcionalidades");
   return (
-    <MockupFrame title="Un espacio de trabajo para cada contexto">
+    <MockupFrame title={t("mockups.workspaces.frameTitle")}>
       <div className="relative flex items-center justify-center overflow-hidden rounded-xl border border-neutral-200/60 bg-neutral-50/50 p-1 shadow-sm">
         <Image
           src="/esp1.png"
-          alt="Espacios de trabajo en Lenio"
+          alt={t("mockups.workspaces.alt")}
           width={800}
           height={500}
           className="h-auto max-h-[220px] w-full object-contain rounded-lg transition-transform duration-500 hover:scale-102 sm:max-h-[250px]"
@@ -204,12 +89,13 @@ function WorkspacesMockup() {
 }
 
 function RepositoryMockup() {
+  const t = useTranslations("funcionalidades");
   return (
-    <MockupFrame title="Repositorio Centralizado">
+    <MockupFrame title={t("mockups.repository.frameTitle")}>
       <div className="relative flex items-center justify-center overflow-hidden rounded-xl border border-neutral-200/60 bg-neutral-50/50 p-1 shadow-sm">
         <Image
           src="/repo1.png"
-          alt="Repositorio Centralizado en Lenio"
+          alt={t("mockups.repository.alt")}
           width={800}
           height={500}
           className="h-auto max-h-[220px] w-full object-contain rounded-lg transition-transform duration-500 hover:scale-102 sm:max-h-[250px]"
@@ -220,12 +106,13 @@ function RepositoryMockup() {
 }
 
 function TeamsMockup() {
+  const t = useTranslations("funcionalidades");
   return (
-    <MockupFrame title="Equipos Colaborativos">
+    <MockupFrame title={t("mockups.teams.frameTitle")}>
       <div className="relative flex items-center justify-center overflow-hidden rounded-xl border border-neutral-200/60 bg-neutral-50/50 p-1 shadow-sm">
         <Image
           src="/teams1.png"
-          alt="Equipos Colaborativos en Lenio"
+          alt={t("mockups.teams.alt")}
           width={800}
           height={500}
           className="h-auto max-h-[220px] w-full object-contain rounded-lg transition-transform duration-500 hover:scale-102 sm:max-h-[250px]"
@@ -236,12 +123,13 @@ function TeamsMockup() {
 }
 
 function ClassesMockup() {
+  const t = useTranslations("funcionalidades");
   return (
-    <MockupFrame title="Espacio Operativo de Aula">
+    <MockupFrame title={t("mockups.classes.frameTitle")}>
       <div className="relative flex items-center justify-center overflow-hidden rounded-xl border border-neutral-200/60 bg-neutral-50/50 p-1 shadow-sm">
         <Image
           src="/class1.png"
-          alt="Espacio Operativo de Aula en Lenio"
+          alt={t("mockups.classes.alt")}
           width={800}
           height={500}
           className="h-auto max-h-[220px] w-full object-contain rounded-lg transition-transform duration-500 hover:scale-102 sm:max-h-[250px]"
@@ -252,12 +140,13 @@ function ClassesMockup() {
 }
 
 function InboxMockup() {
+  const t = useTranslations("funcionalidades");
   return (
-    <MockupFrame title="Inbox Trabajo Docente">
+    <MockupFrame title={t("mockups.inbox.frameTitle")}>
       <div className="relative flex items-center justify-center overflow-hidden rounded-xl border border-neutral-200/60 bg-neutral-50/50 p-1 shadow-sm">
         <Image
           src="/inbox1.png"
-          alt="Inbox Trabajo Docente en Lenio"
+          alt={t("mockups.inbox.alt")}
           width={800}
           height={500}
           className="h-auto max-h-[220px] w-full object-contain rounded-lg transition-transform duration-500 hover:scale-102 sm:max-h-[250px]"
@@ -268,12 +157,13 @@ function InboxMockup() {
 }
 
 function BuilderMockup() {
+  const t = useTranslations("funcionalidades");
   return (
-    <MockupFrame title="Constructor Tipo Canva / Word">
+    <MockupFrame title={t("mockups.builder.frameTitle")}>
       <div className="relative flex items-center justify-center overflow-hidden rounded-xl border border-neutral-200/60 bg-neutral-50/50 p-1 shadow-sm">
         <Image
           src="/formats1.png"
-          alt="Constructor de Formatos en Lenio"
+          alt={t("mockups.builder.alt")}
           width={800}
           height={500}
           className="h-auto max-h-[220px] w-full object-contain rounded-lg transition-transform duration-500 hover:scale-102 sm:max-h-[250px]"
@@ -284,12 +174,13 @@ function BuilderMockup() {
 }
 
 function AIMockup() {
+  const t = useTranslations("funcionalidades");
   return (
-    <MockupFrame title="IA Contextualizada al Currículo">
+    <MockupFrame title={t("mockups.ai.frameTitle")}>
       <div className="relative flex items-center justify-center overflow-hidden rounded-xl border border-neutral-200/60 bg-neutral-50/50 p-1 shadow-sm">
         <Image
           src="/ia.png"
-          alt="Agentes de IA en Lenio"
+          alt={t("mockups.ai.alt")}
           width={800}
           height={500}
           className="h-auto max-h-[220px] w-full object-contain rounded-lg transition-transform duration-500 hover:scale-102 sm:max-h-[250px]"
@@ -300,12 +191,13 @@ function AIMockup() {
 }
 
 function AgendaMockup() {
+  const t = useTranslations("funcionalidades");
   return (
-    <MockupFrame title="Agenda Multi-Workspace">
+    <MockupFrame title={t("mockups.agenda.frameTitle")}>
       <div className="relative flex items-center justify-center overflow-hidden rounded-xl border border-neutral-200/60 bg-neutral-50/50 p-1 shadow-sm">
         <Image
           src="/agenda.png"
-          alt="Agenda Multi-Workspace en Lenio"
+          alt={t("mockups.agenda.alt")}
           width={800}
           height={500}
           className="h-auto max-h-[220px] w-full object-contain rounded-lg transition-transform duration-500 hover:scale-102 sm:max-h-[250px]"
@@ -315,7 +207,7 @@ function AgendaMockup() {
   );
 }
 
-function renderMockup(feature: FeatureContent) {
+function renderMockup(feature: FeatureMeta) {
   switch (feature.mockup) {
     case "workspaces":
       return <WorkspacesMockup />;
@@ -346,9 +238,15 @@ function FeatureBlock({
   feature,
   index,
 }: {
-  feature: FeatureContent;
+  feature: FeatureMeta;
   index: number;
 }) {
+  const t = useTranslations("funcionalidades");
+  const title = t(`items.${feature.id}.title`);
+  const description = t.raw(`items.${feature.id}.description`) as
+    | string
+    | undefined;
+  const bullets = t.raw(`items.${feature.id}.bullets`) as string[] | undefined;
   const isVisual = Boolean(feature.mockup);
   // Alternar posición visual: en índices impares (1, 3, 5, 7) el mockup aparece primero (arriba)
   const visualTop = index % 2 === 1;
@@ -356,18 +254,18 @@ function FeatureBlock({
   const textContent = (
     <div className="space-y-3">
       <h3 className="feature-title text-2xl font-semibold tracking-tight text-[#19303E] md:text-3xl lg:text-4xl">
-        {feature.title}
+        {title}
       </h3>
 
-      {feature.description && (
+      {description && (
         <p className="feature-description text-sm leading-relaxed text-neutral-600 md:text-base">
-          {feature.description}
+          {description}
         </p>
       )}
 
-      {feature.bullets && feature.bullets.length > 0 && (
+      {bullets && bullets.length > 0 && (
         <ul className="space-y-1.5 pt-1">
-          {feature.bullets.map((bullet, idx) => (
+          {bullets.map((bullet, idx) => (
             <li
               key={idx}
               className="flex items-start gap-2 text-xs text-neutral-600 md:text-sm"
@@ -377,17 +275,6 @@ function FeatureBlock({
             </li>
           ))}
         </ul>
-      )}
-
-      {feature.stat && (
-        <div className="feature-stat flex items-baseline gap-3 pt-1">
-          <span className="text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl">
-            {feature.stat.value}
-          </span>
-          <span className="text-xs font-medium text-neutral-500 md:text-sm">
-            {feature.stat.label}
-          </span>
-        </div>
       )}
     </div>
   );
@@ -420,6 +307,7 @@ function FeatureBlock({
 /* ------------------------------------------------------------------ */
 
 export function FeatureIntro() {
+  const t = useTranslations("funcionalidades");
   const [activeMobileIndex, setActiveMobileIndex] = useState(0);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -518,14 +406,14 @@ export function FeatureIntro() {
         <div className="mb-8 rounded-3xl bg-gradient-to-r from-[#1D5969] to-[#19303E] p-6 text-white shadow-xl">
           <div className="space-y-3">
             <h2 className="text-2xl font-bold tracking-tight text-white leading-tight sm:text-3xl">
-              Todo lo que necesitas para enseñar.
+              {t("introTitle")}
             </h2>
             <p className="text-sm leading-relaxed text-neutral-200">
-              Una plataforma diseñada alrededor del trabajo real del docente.
+              {t("introSubtitle")}
             </p>
           </div>
           <div className="mt-6 flex items-center justify-between border-t border-white/20 pt-4">
-            <span className="text-xs text-white/80">Descubre todas las funcionalidades </span>
+            <span className="text-xs text-white/80">{t("discoverAll")}</span>
             <Image
               src="/logoLenioOscuro.svg"
               alt="Lenio Logo"
@@ -547,7 +435,7 @@ export function FeatureIntro() {
             <button
               type="button"
               onClick={prevMobileCard}
-              aria-label="Anterior funcionalidad"
+              aria-label={t("prevFeature")}
               className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-white shadow-sm transition-all hover:bg-neutral-100 active:scale-95"
             >
               <ChevronLeft className="h-4 w-4 text-neutral-800" />
@@ -555,7 +443,7 @@ export function FeatureIntro() {
             <button
               type="button"
               onClick={nextMobileCard}
-              aria-label="Siguiente funcionalidad"
+              aria-label={t("nextFeature")}
               className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-white shadow-sm transition-all hover:bg-neutral-100 active:scale-95"
             >
               <ChevronRight className="h-4 w-4 text-neutral-800" />
@@ -575,7 +463,7 @@ export function FeatureIntro() {
               key={f.id}
               type="button"
               onClick={() => setActiveMobileIndex(idx)}
-              aria-label={`Ver ${f.title}`}
+              aria-label={t("viewFeature", { title: t(`items.${f.id}.title`) })}
               className={`h-2 rounded-full transition-all duration-300 ${activeMobileIndex === idx ? "w-7 bg-emerald-600" : "w-2 bg-neutral-200"
                 }`}
             />
@@ -597,10 +485,10 @@ export function FeatureIntro() {
             <div className="relative flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl bg-gradient-to-r from-[#1D5969] to-[#19303E] p-8 text-white shadow-xl transition-all duration-300">
               <div className="space-y-5">
                 <h2 className="text-3xl font-bold tracking-tight text-white leading-[1.15] md:text-4xl lg:text-5xl">
-                  Todo lo que necesitas para enseñar.
+                  {t("introTitle")}
                 </h2>
                 <p className="text-base leading-relaxed text-neutral-200 md:text-lg">
-                  Una plataforma diseñada alrededor del trabajo real del docente.
+                  {t("introSubtitle")}
                 </p>
               </div>
 
@@ -615,9 +503,9 @@ export function FeatureIntro() {
                   />
                 </div>
                 <div className=" pt-6 border-t border-white/30 flex items-center justify-between text-xs text-white/80">
-                  <span>Descubre todas las funcionalidades</span>
+                  <span>{t("discoverAll")}</span>
                   <span className="flex items-center gap-1 font-medium text-white">
-                    Explorar →
+                    {t("explore")} →
                   </span>
                 </div>
               </div>
@@ -645,7 +533,7 @@ export function FeatureIntro() {
         >
           <div className="flex items-center gap-3.5 rounded-full border border-neutral-200/90 bg-white/95 px-5 py-2.5 shadow-lg backdrop-blur-md">
             <span className="text-[11px] font-semibold text-neutral-400">
-              Ecosistema
+              {t("ecosystem")}
             </span>
             <div className="relative h-2 w-36 overflow-hidden rounded-full bg-neutral-200 md:w-52">
               <div

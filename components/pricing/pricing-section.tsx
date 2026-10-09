@@ -2,16 +2,16 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import {
-  ArrowRight,
-  Building2,
   Check,
   Sparkles,
-  Bot,
+  ChevronRight,
 } from "lucide-react";
 
 import { useCountry } from "@/components/country/country-provider";
 import {
+  annualGoRate,
   annualProRate,
   annualSchoolRate,
   formatAmount,
@@ -22,75 +22,33 @@ import { toFlagClass } from "@/lib/country/countries";
 
 import { cn } from "@/lib/utils";
 
-const plans = [
+interface Plan {
+  priceType: "free" | "go" | "pro" | "school";
+  i18nKey: "lite" | "go" | "pro" | "school";
+  popular?: boolean;
+  href: string;
+}
+
+const plans: Plan[] = [
   {
-    name: "Lite",
-    priceType: "free" as const,
-    description:
-      "Empieza a organizar tu trabajo docente.",
-    features: [
-      "Workspace personal",
-      "Gestión básica de clases",
-      "Estudiantes y actividades",
-      "Calificaciones básicas",
-      "Planeación básica",
-      "10 créditos IA al mes",
-      "Acceso a modelos básicos",
-    ],
+    priceType: "free",
+    i18nKey: "lite",
     href: "/docs/plans/lite",
   },
   {
-    name: "Go",
-    priceType: "go" as const,
-    description:
-      "Las herramientas que necesitas para incorporar Lenio a tu trabajo diario.",
-    features: [
-      "Todo lo incluido en Lite",
-      "Más clases y estudiantes",
-      "Evaluaciones y rúbricas",
-      "Seguimiento académico",
-      "Planeaciones completas",
-      "150 créditos IA al mes",
-      "Acceso a modelos básicos y estándar",
-      "Agentes de IA establecidos",
-    ],
+    priceType: "go",
+    i18nKey: "go",
     href: "/docs/plans/go",
   },
   {
-    name: "Pro",
-    priceType: "pro" as const,
-    description:
-      "Convierte la IA en un verdadero equipo de asistentes para tu trabajo docente.",
+    priceType: "pro",
+    i18nKey: "pro",
     popular: true,
-    features: [
-      "Todo lo incluido en Go",
-      "400 créditos IA al mes",
-      "Acceso a modelos avanzados",
-      "Agentes de IA establecidos",
-      "Crea tus propios agentes de IA",
-      "Personalización avanzada de agentes",
-      "Análisis avanzado del rendimiento",
-      "Automatizaciones con IA",
-    ],
     href: "/docs/plans/pro",
   },
   {
-    name: "School",
-    priceType: "school" as const,
-    description:
-      "Lleva Lenio a toda tu institución y conecta a tus docentes en un mismo entorno.",
-    icon: Building2,
-    pricingNote: "Una plaza corresponde a un docente.",
-    features: [
-      "Workspace institucional",
-      "Gestión de docentes",
-      "Roles y permisos",
-      "Equipos y departamentos",
-      "Gestión de plazas",
-      "Recursos institucionales",
-      "Administración centralizada",
-      "Herramientas institucionales de IA",
-    ],
+    priceType: "school",
+    i18nKey: "school",
     href: "/docs/plans/school",
   },
 ];
@@ -98,250 +56,328 @@ const plans = [
 type Billing = "monthly" | "annual";
 
 export function PricingSection() {
+  const t = useTranslations("precios");
   const { selection } = useCountry();
   const rates = planRateForCurrency(selection.currency);
   const money = (amount: number) => formatAmount(amount, selection);
   const [billing, setBilling] = useState<Billing>("monthly");
   const [seats, setSeats] = useState(1);
+  const [isEditingSeats, setIsEditingSeats] = useState(false);
+  const [seatsInput, setSeatsInput] = useState("1");
+
+  const handleStartEditing = () => {
+    setSeatsInput(seats.toString());
+    setIsEditingSeats(true);
+  };
+
+  const handleSaveSeats = (valueStr: string) => {
+    const parsed = parseInt(valueStr, 10);
+    if (!isNaN(parsed) && parsed >= 1) {
+      setSeats(parsed);
+      setSeatsInput(parsed.toString());
+    } else {
+      setSeatsInput(seats.toString());
+    }
+    setIsEditingSeats(false);
+  };
 
   return (
-    <section id="precios" className="w-full py-20 sm:py-24">
-      <div className="mx-auto max-w-[1600px] px-6 lg:px-8">
+    <section id="precios" className="w-full py-16 sm:py-20">
+      <div className="mt-2 mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
-
           <h2 className="text-4xl text-[#19303E] font-bold tracking-tight sm:text-5xl">
-            Precios
+            {t("title")}
           </h2>
 
-          <p className="mt-2 text-lg leading-8 text-muted-foreground">
-            Comienza gratis y escala cuando necesites más capacidades.
-          </p>
-
           {/* Billing toggle */}
-          <div className="mt-2 inline-flex items-center rounded-full border bg-muted/60 p-1">
+          <div className="mt-6 inline-flex items-center rounded-full border border-slate-200 bg-muted/60 p-1 shadow-inner">
             {(["monthly", "annual"] as const).map((option) => (
               <button
                 key={option}
                 type="button"
                 onClick={() => setBilling(option)}
                 className={[
-                  "rounded-full px-5 py-2 text-sm font-semibold transition-colors",
+                  "rounded-full px-5 py-2 text-sm font-semibold transition-all duration-200",
                   billing === option
                     ? "bg-gradient-to-r from-[#19303E] to-[#1D5969] text-white shadow-sm"
                     : "text-muted-foreground hover:text-foreground",
                 ].join(" ")}
               >
-                {option === "monthly" ? "Mensual" : "Anual"}
+                {option === "monthly" ? t("monthly") : t("annual")}
               </button>
             ))}
           </div>
         </div>
 
-        {/* Plans */}
-        <div className="mt-7 grid gap-6 lg:grid-cols-4">
+        {/* Section Banners for Desktop Comparison */}
+
+
+
+
+        {/* Plans Grid */}
+        <div className="mt-8 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-stretch">
           {plans.map((plan) => {
-            const Icon = plan.icon;
+            const isSchool = plan.priceType === "school";
+            const planName =
+              plan.i18nKey.charAt(0).toUpperCase() + plan.i18nKey.slice(1);
+            const subtitle = t(`plans.${plan.i18nKey}.subtitle`);
+            const groups = t.raw(`plans.${plan.i18nKey}.groups`) as {
+              category: string;
+              items: string[];
+            }[];
+            const cta = t(`plans.${plan.i18nKey}.cta`);
 
             return (
               <article
-                key={plan.name}
-                className={[
-                  "relative flex flex-col rounded-2xl border bg-background p-6",
-                  "transition-all duration-200",
-                  "hover:-translate-y-1 hover:shadow-lg",
-                  plan.popular
-                    ? "border-primary shadow-md ring-1 ring-primary/20"
-                    : "shadow-sm",
-                ].join(" ")}
+                key={plan.priceType}
+                className={cn(
+                  "relative flex flex-col justify-between rounded-2xl p-6 transition-all duration-200 hover:-translate-y-1",
+                  isSchool
+                    ? "bg-[#172B36] text-[#F1F6F4] border border-[#114C5A] shadow-xl"
+                    : plan.popular
+                      ? "bg-background border-2 border-[#1D5969] shadow-md ring-2 ring-[#1D5969]/15"
+                      : "bg-background border border-slate-200 shadow-sm hover:shadow-md"
+                )}
               >
-                {/* Popular badge */}
+                {/* Recommended Badge for Go */}
                 {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <div className="flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-[#19303E] to-[#1D5969] text-white px-3.5 py-1.5 text-xs font-semibold text-primary-foreground shadow-sm">
-
-                      Preferido
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                    <div className="flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-[#19303E] to-[#1D5969] text-white px-3.5 py-1 text-xs font-semibold text-primary-foreground shadow-md">
+                      <Sparkles className="h-3 w-3" />
+                      {t("preferred")}
                     </div>
                   </div>
                 )}
 
-                {/* Plan header */}
-                <div>
-                  <div className="flex items-center gap-2.5">
-                    <h3 className="text-2xl font-semibold tracking-tight">
-                      Lenio {plan.name}
+                {/* Main Content Area */}
+                <div className="flex flex-col">
+                  {/* Institutional Header Label for School */}
+
+                  {/* Plan Name & Country Flag */}
+                  <div className="flex items-center justify-between gap-2">
+                    <h3 className={cn("text-2xl font-bold tracking-tight", isSchool ? "text-[#F1F6F4]" : "text-[#19303E]")}>
+                      Lenio {planName}
                     </h3>
                     <span
                       aria-hidden
                       className={cn(
                         toFlagClass(selection.code),
-                        "ml-auto h-3.5 w-5 shrink-0 rounded-[2px] align-middle"
+                        "h-4 w-5 shrink-0 rounded-[2px] opacity-90"
                       )}
                     />
                   </div>
 
-
-                </div>
-
-                {/* Price */}
-                <div className="mt-2">
-                  {(plan.priceType === "free" || plan.priceType === "go") && (
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-3xl font-bold tracking-tight">
-                        {plan.priceType === "free"
-                          ? "$0"
-                          : billing === "annual"
-                            ? money(rates.go)
-                            : money(monthlyGoRate(rates))}
-                      </span>
-
-                      <span className="text-sm text-muted-foreground">
-                        {plan.priceType === "free"
-                          ? "/ mes"
-                          : billing === "annual"
-                            ? "/ año"
-                            : "/ mes"}
-                      </span>
-                    </div>
-                  )}
+                  {/* Plan Subtitle */}
+                  <p
+                    className={cn(
+                      "mt-2 text-sm leading-relaxed min-h-[40px]",
+                      isSchool ? "text-[#D9E8E2]" : "text-muted-foreground"
+                    )}
+                  >
+                    {subtitle}
+                  </p>
 
 
 
-
-
-
-                  {plan.priceType === "pro" && (
-                    <>
+                  {/* Price Header */}
+                  <div className=" dark:border-slate-700/50">
+                    {plan.priceType === "free" && (
                       <div className="flex items-baseline gap-2">
-                        <span className="text-3xl font-bold tracking-tight">
+                        <span className="text-3xl font-extrabold tracking-tight text-[#19303E]">
+                          $0
+                        </span>
+                        <span className="text-sm font-medium text-muted-foreground">
+                          {t("perMonth")}
+                        </span>
+                      </div>
+                    )}
+
+                    {plan.priceType === "go" && (
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-3xl font-extrabold tracking-tight text-[#19303E]">
+                          {billing === "annual"
+                            ? money(annualGoRate(rates))
+                            : money(monthlyGoRate(rates))}
+                        </span>
+                        <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">
+                          {billing === "annual" ? t("perYearMonths") : t("perMonth")}
+                        </span>
+                      </div>
+                    )}
+
+                    {plan.priceType === "pro" && (
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-3xl font-extrabold tracking-tight text-[#19303E]">
                           {billing === "annual"
                             ? money(annualProRate(rates))
                             : money(rates.pro)}
                         </span>
-
-                        <span className="text-sm text-muted-foreground">
-                          {billing === "annual" ? "/ año" : "/ mes"}
+                        <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">
+                          {billing === "annual" ? t("perYearMonths") : t("perMonth")}
                         </span>
                       </div>
+                    )}
 
+                    {plan.priceType === "school" && (
+                      <div className="flex flex-col gap-3">
+                        <div className="flex items-baseline gap-1.5 flex-wrap">
+                          <span className="text-3xl font-extrabold tracking-tight text-[#F1F6F4]">
+                            {billing === "annual"
+                              ? money(annualSchoolRate(rates) * seats)
+                              : money(rates.school * seats)}
+                          </span>
+                          <span className="text-xs font-medium text-[#D9E8E2]">
+                            {billing === "annual"
+                              ? t("perSeatYear", { count: seats })
+                              : t("perSeatMonth", { count: seats })}
+                          </span>
+                        </div>
 
-                    </>
-                  )}
+                        {isSchool && (
+                          <div className="mt-2 mb-1 flex items-center justify-between gap-3 rounded-xl border border-[#114C5A] bg-[#114C5A]/60 px-3.5 py-2.5">
+                            <span className="text-xs font-semibold text-[#D9E8E2]">
+                              {t("seatsLabel")}
+                            </span>
+                            <div className="flex items-center gap-2">
+                              <button
+                                type="button"
+                                aria-label={t("removeSeat")}
+                                onClick={() => {
+                                  setIsEditingSeats(false);
+                                  setSeats((value) => Math.max(1, value - 1));
+                                }}
+                                className="flex h-7 w-7 items-center justify-center rounded-full border border-[#D9E8E2]/30 bg-[#172B36] text-base font-bold leading-none text-[#F1F6F4] transition-colors hover:bg-[#114C5A] disabled:opacity-40"
+                                disabled={seats <= 1}
+                              >
+                                −
+                              </button>
 
-                  {plan.priceType === "school" && (
-                    <>
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-3xl font-bold tracking-tight">
-                          {billing === "annual"
-                            ? money(annualSchoolRate(rates) * seats)
-                            : money(rates.school * seats)}
-                        </span>
+                              {isEditingSeats ? (
+                                <input
+                                  type="number"
+                                  min={1}
+                                  autoFocus
+                                  value={seatsInput}
+                                  onChange={(e) => setSeatsInput(e.target.value)}
+                                  onFocus={(e) => e.target.select()}
+                                  onBlur={() => handleSaveSeats(seatsInput)}
+                                  onKeyDown={(e) => {
+                                    if (e.key === "Enter") {
+                                      handleSaveSeats(seatsInput);
+                                    } else if (e.key === "Escape") {
+                                      setIsEditingSeats(false);
+                                    }
+                                  }}
+                                  className="w-14 text-center text-sm font-bold bg-[#172B36] text-white border border-[#D9E8E2]/60 rounded px-1 py-0.5 focus:outline-none focus:ring-2 focus:ring-white/50 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                                />
+                              ) : (
+                                <button
+                                  type="button"
+                                  onClick={handleStartEditing}
+                                  title={t("editSeatsHint")}
+                                  className="min-w-8 px-1.5 py-0.5 rounded text-center text-sm font-bold tabular-nums text-white hover:bg-white/15 focus:outline-none focus:ring-1 focus:ring-white/40 transition-colors cursor-pointer"
+                                >
+                                  {seats}
+                                </button>
+                              )}
 
-                        <span className="text-sm text-muted-foreground">
-                          {billing === "annual"
-                            ? "/ año por plaza"
-                            : "/ mes por plaza"}
-                        </span>
+                              <button
+                                type="button"
+                                aria-label={t("addSeat")}
+                                onClick={() => {
+                                  setIsEditingSeats(false);
+                                  setSeats((value) => value + 1);
+                                }}
+                                className="flex h-7 w-7 items-center justify-center rounded-full border border-[#D9E8E2]/30 bg-[#172B36] text-base font-bold leading-none text-[#F1F6F4] transition-colors hover:bg-[#114C5A]"
+                              >
+                                +
+                              </button>
+                            </div>
+                          </div>
+                        )}
                       </div>
+                    )}
+                  </div>
 
-
-
-
-                    </>
-                  )}
-
-
-
-
-                </div>
-
-
-
-                {/* Features */}
-                <div className="flex-1 mt-6">
-
-
-                  <ul className="space-y-3">
-                    {plan.features.map((feature) => (
-                      <li
-                        key={feature}
-                        className="flex items-start gap-3 text-sm"
-                      >
-                        <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-primary/10">
-                          <Check className="h-3 w-3 text-primary" />
-                        </span>
-
-                        <span className="leading-5">{feature}</span>
-                      </li>
+                  {/* Categorized Features */}
+                  <div className="mt-6 space-y-5">
+                    {groups.map((group) => (
+                      <div key={group.category} className="space-y-2">
+                        <h4
+                          className={cn(
+                            "text-md font-semibold ",
+                            isSchool ? "text-white" : "text-[#19303E]"
+                          )}
+                        >
+                          {group.category}
+                        </h4>
+                        <ul className="space-y-2">
+                          {group.items.map((item) => (
+                            <li
+                              key={item}
+                              className="flex items-start gap-2.5 text-xs sm:text-sm"
+                            >
+                              <span
+                                className={cn(
+                                  "mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full",
+                                  isSchool
+                                    ? "bg-[#114C5A] text-white"
+                                    : "bg-[#1D5969]/10 text-[#1D5969]"
+                                )}
+                              >
+                                <Check className="h-3 w-3 stroke-[2.5]" />
+                              </span>
+                              <span
+                                className={cn(
+                                  "leading-snug",
+                                  isSchool ? "text-[#F1F6F4]" : "text-slate-700"
+                                )}
+                              >
+                                {item}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
 
-                {plan.priceType === "school" && (
-                  <>
-
-
-
-                    {/* Seat simulator */}
-                    <div className="mt-5 flex items-center justify-between gap-3 rounded-xl border bg-muted/40 px-3.5 py-3">
-                      <span className="text-sm font-medium">
-                        Plazas
-                      </span>
-                      <div className="flex items-center gap-3">
-                        <button
-                          type="button"
-                          aria-label="Quitar una plaza"
-                          onClick={() =>
-                            setSeats((value) => Math.max(1, value - 1))
-                          }
-                          className="flex h-7 w-7 items-center justify-center rounded-full border bg-background text-lg leading-none text-muted-foreground transition-colors hover:border-primary hover:text-primary disabled:opacity-40"
-                          disabled={seats <= 1}
-                        >
-                          −
-                        </button>
-                        <span className="min-w-6 text-center font-semibold tabular-nums">
-                          {seats}
-                        </span>
-                        <button
-                          type="button"
-                          aria-label="Añadir una plaza"
-                          onClick={() => setSeats((value) => value + 1)}
-                          className="flex h-7 w-7 items-center justify-center rounded-full border bg-background text-lg leading-none text-muted-foreground transition-colors hover:border-primary hover:text-primary"
-                        >
-                          +
-                        </button>
-                      </div>
-                    </div>
-                  </>
-                )}
-
-                {/* Documentation button */}
-                <Link
-                  href={plan.href}
-                  className={[
-                    "group mt-8 inline-flex w-full items-center justify-center gap-2",
-                    "rounded-lg border px-4 py-2.5",
-                    "text-sm font-medium",
-                    "transition-all duration-200",
-                    plan.popular
-                      ? "border-primary bg-gradient-to-r from-[#19303E] to-[#1D5969] text-white hover:bg-primary/90"
-                      : "hover:bg-muted",
-                  ].join(" ")}
-                >
-                  Suscríbete ahora
-                </Link>
+                {/* Bottom Section: CTA Button */}
+                <div className="mt-8 pt-4">
+                  <Link
+                    href={plan.href}
+                    className={cn(
+                      "group inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-200 shadow-sm",
+                      isSchool
+                        ? "bg-white text-[#172B36] hover:brightness-105 shadow-amber-900/30"
+                        : plan.popular
+                          ? "bg-gradient-to-r from-[#19303E] to-[#1D5969] text-white hover:opacity-95 shadow-slate-900/20"
+                          : "border border-slate-300 bg-background text-[#19303E] hover:bg-slate-100 hover:text-slate-900"
+                    )}
+                  >
+                    {cta}
+                    <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </Link>
+                </div>
               </article>
             );
           })}
         </div>
 
-        {/* Credit explanation */}
-
-
         {/* Bottom note */}
-        <p className="mt-6 text-center text-xs text-muted-foreground">
-          Consulta la <Link href="/docs/plans/pro" className=" underline">documentación</Link> para conocer los límites,
-          características y especificaciones completas de cada plan.
+        <p className="mt-8 text-center text-xs text-muted-foreground">
+          {t.rich("docsNote", {
+            link: (chunks) => (
+              <Link
+                href="/docs/plans/pro"
+                className="underline font-medium text-[#19303E]"
+              >
+                {chunks}
+              </Link>
+            ),
+          })}
         </p>
       </div>
     </section>

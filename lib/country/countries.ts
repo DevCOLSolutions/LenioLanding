@@ -10,17 +10,50 @@ export interface CountryListItem {
 
 const byCode = new Map<CountryCode, CountryListItem>()
 
-for (const c of countries) {
+/**
+ * Países con presencia de Lenio, en el orden en que se muestran
+ * en el selector (Colombia primero). Cualquier país fuera de esta
+ * lista no aparece en la UI y resuelve al default (USD).
+ */
+export const SUPPORTED_COUNTRY_CODES = [
+  "CO", "PE", "EC", "MX", "CL", "DO", "PA", "CR", "BO", "PY",
+  "GT", "SV", "HN", "BR", "ES", "PT", "IT", "PL", "RO", "US",
+] as const
+
+export type SiteLocale = "es" | "en" | "pt" | "it" | "pl" | "ro"
+
+/**
+ * País soportado → idioma del sitio. El selector de países es el
+ * único switcher: elegir un país define moneda e idioma.
+ */
+const COUNTRY_SITE_LOCALE: Record<string, SiteLocale> = {
+  CO: "es", PE: "es", EC: "es", MX: "es", CL: "es", DO: "es",
+  PA: "es", CR: "es", BO: "es", PY: "es", GT: "es", SV: "es",
+  HN: "es", ES: "es",
+  US: "en",
+  BR: "pt", PT: "pt",
+  IT: "it",
+  PL: "pl",
+  RO: "ro",
+}
+
+export function localeForCountry(code: CountryCode): SiteLocale {
+  return COUNTRY_SITE_LOCALE[code] ?? "en"
+}
+
+const supportedOrder = new Map<string, number>(
+  SUPPORTED_COUNTRY_CODES.map((code, index) => [code, index])
+)
+
+for (const code of SUPPORTED_COUNTRY_CODES) {
+  const c = countries.find((country) => country.cca2 === code)
+  if (!c) continue
   const currency = Object.keys(c.currencies ?? {})[0] ?? ""
   byCode.set(c.cca2, { code: c.cca2, name: c.name.common, currency })
 }
 
 export function countryExists(code: string | null | undefined): code is CountryCode {
   return typeof code === "string" && code.length === 2 && byCode.has(code.toUpperCase())
-}
-
-export function getCountry(code: string): CountryListItem | undefined {
-  return byCode.get(code.toUpperCase())
 }
 
 export function toFlagClass(code: CountryCode): string {
@@ -59,7 +92,11 @@ export function localizedCountryList(locale: string): CountryListItem[] {
       }
       return { ...item, name }
     })
-    .sort((a, b) => a.name.localeCompare(b.name, locale))
+    .sort(
+      (a, b) =>
+        (supportedOrder.get(a.code) ?? Number.MAX_SAFE_INTEGER) -
+        (supportedOrder.get(b.code) ?? Number.MAX_SAFE_INTEGER)
+    )
 }
 
 export function detectCountryFromLocaleTag(localeString: string): CountryCode | null {

@@ -14,11 +14,12 @@ import {
 import { cn } from "@/lib/utils"
 import { usePathname, useRouter } from "@/i18n/routing"
 import {
-  isSpanishSpeakingCountry,
+  localeForCountry,
   toFlagClass,
   type CountryCode,
 } from "@/lib/country/countries"
 import { useCountry } from "./country-provider"
+import { currencyForCountry } from "@/lib/country/pricing"
 
 function Flag({
   code,
@@ -62,7 +63,8 @@ export function CountrySelector() {
       (c) =>
         c.name.toLowerCase().includes(term) ||
         c.code.toLowerCase().includes(term) ||
-        c.currency.toLowerCase().includes(term)
+        c.currency.toLowerCase().includes(term) ||
+        currencyForCountry(c.code).toLowerCase().includes(term)
     )
   }, [countries, search])
 
@@ -116,9 +118,7 @@ export function CountrySelector() {
                       setCountry(code)
                       setSearch("")
                       setOpen(false)
-                      const target: "es" | "en" = isSpanishSpeakingCountry(code)
-                        ? "es"
-                        : "en"
+                      const target = localeForCountry(code)
                       if (target !== locale) {
                         router.replace(pathname, { locale: target })
                       }
@@ -128,7 +128,7 @@ export function CountrySelector() {
                     <Flag code={country.code} className="size-4" />
                     <span className="flex-1 truncate">{country.name}</span>
                     <span className="text-xs text-muted-foreground">
-                      {country.currency}
+                      {currencyForCountry(country.code)}
                     </span>
                     <span className="flex w-4 items-center justify-center">
                       {isCurrent && (

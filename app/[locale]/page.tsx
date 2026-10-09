@@ -3,6 +3,7 @@ import { setRequestLocale } from "next-intl/server";
 
 import Header from "@/components/header/Header";
 import Hero from "@/components/hero/Hero";
+import WorkflowsSection from "@/components/workflows/WorkflowsSection";
 import FeatureIntro from "@/components/funcionalidades/FeatureIntro";
 import CtaSection from "@/components/cta/CtaSection";
 import { PricingSection } from "@/components/pricing/pricing-section";

@@ -1,19 +1,20 @@
 {
   "metadata": {
-    "title": "Lenio — Document and process management for educational institutions",
+    "title": "Lenio — The intelligent workspace for teachers",
     "titleTemplate": "%s · Lenio",
-    "description": "The platform where your school centralizes its documentation, administrative processes and approval flows, aligned with ISO 9001 standards.",
+    "description": "Plan classes, assess students, automate tasks and use AI agents in one single workspace. Start free.",
     "keywords": [
-      "document management",
-      "educational institutions",
-      "ISO 9001",
-      "schools",
-      "administrative processes",
-      "document management",
-      "education"
+      "teacher workspace",
+      "platform for teachers",
+      "tools for teachers",
+      "lesson planning",
+      "student assessment",
+      "AI for teachers",
+      "schools"
     ],
-    "ogTitle": "Lenio — Your school, organized",
-    "ogDescription": "Documentation, processes and approvals in one place. Simple, centralized and ISO 9001 aligned."
+    "ogTitle": "Lenio — Your teaching work, organized",
+    "ogDescription": "An intelligent workspace where you plan, assess and manage all your work as a teacher. Start for free.",
+    "orgDescription": "The intelligent workspace for teachers and schools"
   },
   "nav": {
     "product": "Product",
@@ -22,318 +23,285 @@
     "pricing": "Pricing",
     "resources": "Resources",
     "documentation": "Documentation",
+    "documentationDescription": "Explore all the features",
     "help": "Help center",
+    "helpDescription": "Get answers and find quick guides",
     "language": "Change language",
     "languages": "Languages",
     "spanish": "Spanish",
     "english": "English",
-    "cta": "Get started free",
-    "startNow": "Get started"
+    "openMenu": "Open menu",
+    "startNow": "Start free",
+    "schools": "Lenio Schools"
   },
   "hero": {
-    "badge": "Document and process management",
+    "badge": "All-in-one for teachers",
     "title": {
-      "part1": "A",
+      "part1": "An",
       "part2": "intelligent",
       "part3": "workspace",
       "part4": "for teachers and schools"
     },
-    "subtitle": "Plan classes, assess your students, automate tasks, and make the most of artificial intelligence to spend more time teaching.",
-    "ctaPrimary": "Create a free account",
-    "ctaSecondary": "See features",
+    "subtitle": "Plan classes, assess your students, automate tasks, and make the most of artificial intelligence to spend more time teaching. Start free.",
+    "trustNote": "Free · No credit card · Ready in 2 min",
+    "ctaStart": "Create free account",
+    "ctaDemo": "Watch demo",
+    "teachersLabel": "Teachers",
     "iso": "Aligned with ISO 9001 standards"
   },
-  "features": {
-    "badge": "Features",
-    "title": "Everything your institution needs, without the chaos",
-    "subtitle": "The tools already living in your school's daily routine, unified in one simple platform.",
-    "repoTitle": "Repository",
-    "repoDescription": "Centralized institutional file and document management with version control.",
-    "classesTitle": "Classes",
-    "classesDescription": "Board, files, students, assignments and attendance for the academic day-to-day.",
-    "builderTitle": "Form Builder",
-    "builderDescription": "Build custom institutional forms — minutes, evaluations, whatever your school needs — with a drag-and-drop builder.",
-    "cta": "Learn about Lenio"
-  },
   "funcionalidades": {
-    "badge": "Features",
-    "progressLabel": "Explore",
     "introTitle": "Everything you need to teach.",
-    "introSubtitle": "A platform designed around the real work of teachers: plan, teach, assess and follow up from a single place.",
-    "introScroll": "Scroll to explore",
-    "introProductAlt": "Lenio dashboard with the teacher's academic management",
-    "alts": {
-      "planning": "Teacher structuring their lesson plan",
-      "classes": "Classroom with students working",
-      "activities": "School activity materials and books",
-      "assessment": "Fragment of the Lenio assessment panel",
-      "grading": "Notebook and grading notes",
-      "documents": "Organized documents and evidence on a desk",
-      "ai": "Abstract representation of artificial intelligence",
-      "agents": "Person working alongside digital assistants"
-    },
-    "planning": {
-      "eyebrow": "Planning",
-      "title": "Plan with clarity and purpose",
-      "description": "Structure your classes by connecting standards, resources and evidence. With AI support, draft complete teaching sequences in minutes.",
-      "items": [
-        "Teaching sequences",
-        "Connect standards and resources",
-        "AI-assisted planning"
-      ]
-    },
-    "classes": {
-      "eyebrow": "Classes",
-      "title": "Your class, organized from day one",
-      "description": "Run the daily life of each class in one place: information, resources, students, assignments and attendance without juggling tools.",
-      "items": [
-        "Notice board",
-        "Resources always at hand",
-        "Students and attendance",
-        "Assignments with tracking"
-      ]
-    },
-    "activities": {
-      "eyebrow": "Activities",
-      "title": "From brief to submission in three steps",
-      "description": "Create activities, configure the submission and publish them to your whole class. Everything you assign stays connected to the grades.",
-      "steps": [
-        {
-          "title": "Create",
-          "description": "Design the activity, the prompts and the assessment criteria."
-        },
-        {
-          "title": "Configure",
-          "description": "Set the submission format, deadlines and instructions."
-        },
-        {
-          "title": "Publish",
-          "description": "Share it with your class instantly and track submissions."
-        }
-      ]
-    },
-    "assessment": {
-      "eyebrow": "Assessment",
-      "title": "Assess learning, not paperwork",
-      "description": "Build assessments and rubrics in minutes, collect responses and let the platform organize the results for you.",
-      "annotations": [
-        "Rubrics",
-        "Question bank",
-        "Automatic results"
-      ]
-    },
-    "grading": {
-      "eyebrow": "Grading",
-      "title": "Fewer spreadsheets, more time in class",
-      "description": "Classify your students' work with clear criteria and generate grades, averages and reports without manual recalculations.",
-      "stat": {
-        "value": "4",
-        "unit": "hours",
-        "label": "less administrative work per week for an average teacher."
+    "introSubtitle": "A platform designed around teachers' real work.",
+    "discoverAll": "Discover all the features",
+    "explore": "Explore",
+    "ecosystem": "Ecosystem",
+    "prevFeature": "Previous feature",
+    "nextFeature": "Next feature",
+    "viewFeature": "View {title}",
+    "mockups": {
+      "workspaces": {
+        "frameTitle": "A workspace for every context",
+        "alt": "Workspaces in Lenio"
+      },
+      "repository": {
+        "frameTitle": "Centralized Repository",
+        "alt": "Centralized repository in Lenio"
+      },
+      "teams": {
+        "frameTitle": "Collaborative Teams",
+        "alt": "Collaborative teams in Lenio"
+      },
+      "classes": {
+        "frameTitle": "Classroom Operating Space",
+        "alt": "Classroom operating space in Lenio"
+      },
+      "inbox": {
+        "frameTitle": "Teacher Inbox",
+        "alt": "Teacher inbox in Lenio"
+      },
+      "builder": {
+        "frameTitle": "Canva / Word-style Builder",
+        "alt": "Format builder in Lenio"
+      },
+      "ai": {
+        "frameTitle": "Curriculum-Aware AI",
+        "alt": "AI agents in Lenio"
+      },
+      "agenda": {
+        "frameTitle": "Multi-Workspace Agenda",
+        "alt": "Multi-workspace agenda in Lenio"
       }
     },
-    "documents": {
-      "eyebrow": "Documents",
-      "title": "Your career, in one place",
-      "description": "Store plans, evidence, resources and forms with version control. Find what you need in seconds and share it with your team."
-    },
-    "ai": {
-      "eyebrow": "AI",
-      "title": "AI in the real work of teachers",
-      "description": "Not a standalone chatbot: AI lives inside Lenio to help you plan, create, give feedback and analyze without leaving your workspace.",
-      "capabilities": [
-        "Generate activities and questions",
-        "Write clear feedback",
-        "Analyze assessment results",
-        "Prepare your lesson plan"
-      ]
-    },
-    "agents": {
-      "eyebrow": "Agents",
-      "title": "Your team of assistants",
-      "description": "Specialized agents that know your context: they work on your classroom's real problems and follow up with you.",
-      "quote": "Your team of assistants.",
-      "agents": [
-        "Planning Agent",
-        "Activities Agent",
-        "Assessment Agent",
-        "Analysis Agent"
-      ]
+    "items": {
+      "workspaces": {
+        "title": "Workspaces",
+        "highlight": "Your space. Your context.",
+        "description": "Conceptual architecture designed to separate and organize your teaching life.",
+        "bullets": [
+          "A personal space for your teaching work.",
+          "Institutional spaces to work alongside your school.",
+          "You can belong to several workspaces.",
+          "Your personal information always stays with you.",
+          "Each workspace keeps its own context, information and permissions."
+        ],
+        "indicator": "Multi-Context Architecture"
+      },
+      "repository": {
+        "title": "Repository",
+        "highlight": "All your teaching work. In one place.",
+        "description": "Your teaching work shouldn't be scattered across folders, chats and emails.",
+        "bullets": [
+          "Centralized repository of resources and documents.",
+          "Version control, history and traceability.",
+          "Flows compatible with quality processes and ISO.",
+          "Share only what you need."
+        ],
+        "indicator": "ISO & Teacher Quality"
+      },
+      "teams": {
+        "title": "Teams",
+        "highlight": "Work with the people you need.",
+        "description": "Not just a chat group: a true collaborative space with workflow control.",
+        "bullets": [
+          "Research seedbeds and study groups.",
+          "Academic areas and institutional committees.",
+          "Projects and collaborative work teams.",
+          "Effective control of workflows and working roles."
+        ],
+        "indicator": "Effective Collaboration"
+      },
+      "classes": {
+        "title": "Classes",
+        "highlight": "Everything that happens in the classroom.",
+        "description": "The teacher's daily operating space that brings group management together.",
+        "bullets": [
+          "Lesson planning and sequencing.",
+          "Attendance and grade tracking.",
+          "Announcement board and activities.",
+          "Comprehensive follow-up for each student and the group."
+        ],
+        "indicator": "Classroom Operating Space"
+      },
+      "inbox": {
+        "title": "Inbox",
+        "highlight": "All your communication, in one place.",
+        "description": "An inbox built for teaching work, not another informal messaging app.",
+        "bullets": [
+          "Communicate with your teams and other teachers.",
+          "Connect with the Lenio user community.",
+          "Messages strictly related to your work."
+        ],
+        "indicator": "Focused Communication"
+      },
+      "builder": {
+        "title": "Format builder",
+        "highlight": "Create exactly the formats you need.",
+        "description": "A reusable visual editor like Word / Canva designed for school documents.",
+        "bullets": [
+          "Design memos, lesson plans and rubrics.",
+          "Assessment formats, reports and forms.",
+          "Create a format once, then reuse or modify it.",
+          "Generate one-off instances or documents."
+        ],
+        "indicator": "Canva / Word-style Editor"
+      },
+      "ai": {
+        "title": "AI Agents",
+        "description": "AI contextualized to teachers' real work, with memory of your environment.",
+        "bullets": [
+          "Continuous contextual memory across your personal and institutional space.",
+          "It understands your classes, history, repository and past documents.",
+          "Specialized agents: Planner, Assessor, Activities and Feedback.",
+          "Aligned with your school's context and the national curriculum framework."
+        ]
+      },
+      "agenda": {
+        "title": "Agenda",
+        "highlight": "Your time belongs to the workspace too.",
+        "description": "Each workspace keeps its own agenda to manage time in an orderly way.",
+        "bullets": [
+          "View your schedule and commitments.",
+          "Create events and organize activities.",
+          "Manage institutional workspace events.",
+          "Independent calendar contexts."
+        ],
+        "indicator": "Multi-Space Time Management"
+      }
     }
   },
-  "why": {
-    "badge": "Why Lenio",
-    "title": "Built for the schools that lack a robust system today",
-    "subtitle": "Many institutions, especially public and small schools, run their processes with scattered tools. Lenio brings them together with simplicity first.",
-    "point1Title": "Simplicity",
-    "point1Description": "A clean interface any teacher adopts without lengthy training.",
-    "point2Title": "ISO 9001 standard",
-    "point2Description": "Your documentation and processes organized with the quality approach certified by international standards.",
-    "point3Title": "Scalable",
-    "point3Description": "One teacher starts, it grows to the whole school with institutional contracting."
-  },
   "cta": {
-    "title": "Ready to bring order to your institution",
-    "subtitle": "Create your free account and discover how simple managing your school can be.",
-    "button": "Get started free"
+    "title": "Start using Lenio today",
+    "subtitle": "Lenio is the platform designed to empower teachers' work, bring teams together and support quality processes. Create your personal space in minutes and connect with features built to transform your daily work.",
+    "button": "Get started free",
+    "imageAlt": "Lenio control panel"
   },
   "precios": {
-    "badge": "Plans",
-    "title": "A plan for every stage of how you work",
-    "subtitle": "Start free from day one and upgrade whenever you need. Choose the right plan for you or your school.",
-    "perMonth": "/month",
-    "perYear": "/year",
-    "goMonthlyLine": "≈ {price}/month (billed annually)",
-    "freeForever": "Free forever",
-    "popular": "Most popular",
-    "contactUs": "Contact us",
-    "toDefine": "To be defined",
-    "schoolPlus": "School and Pro are complementary: a teacher can have institutional access through their school (School) and, in parallel, their advanced personal tools and AI (Pro).",
-    "currencyNote": "Prices in {currency} for {country}.",
-    "more": "+{count} more",
-    "lite": {
-      "name": "Lite",
-      "description": "Lenio's entry plan. Start without paying.",
-      "cta": "Get started free",
-      "include": "Includes",
-      "features": [
-        "Personal workspace",
-        "Basic class management",
-        "Student records",
-        "Activities and assignments",
-        "Basic grades",
-        "Basic planning",
-        "Educational resources",
-        "Basic tracking features",
-        "Limited AI access",
-        "Storage limits",
-        "Usage limits"
-      ]
-    },
-    "go": {
-      "name": "Go",
-      "description": "The budget-friendly plan for individual teachers.",
-      "cta": "Start with Go",
-      "include": "Everything in Lite, plus:",
-      "groups": [
-        {
-          "title": "Academic management",
-          "items": [
-            "More classes",
-            "More students",
-            "Full activity management",
-            "Assessments",
-            "Grades",
-            "Academic tracking",
-            "Rubrics",
-            "Lesson plans",
-            "Resources",
-            "Extended history"
-          ]
-        },
-        {
-          "title": "Organization",
-          "items": [
-            "More storage",
-            "Exports",
-            "Better organizing capabilities",
-            "More personal workspace features"
-          ]
-        },
-        {
-          "title": "AI",
-          "items": [
-            "Access to AI tools",
-            "Limited activity generation",
-            "Question generation",
-            "Planning help",
-            "Basic teacher support"
-          ]
-        }
-      ]
-    },
-    "pro": {
-      "name": "Pro",
-      "description": "Lenio's premium individual plan. This is where the difference begins.",
-      "cta": "Try Pro",
-      "include": "Includes everything in Go, plus:",
-      "groups": [
-        {
-          "title": "Advanced AI",
-          "items": [
-            "Advanced activity generation",
-            "Assessment generation",
-            "Rubric generation",
-            "Activity adaptation",
-            "Results analysis",
-            "Student performance analysis",
-            "Report generation",
-            "Information summaries",
-            "Planning support",
-            "Personal teacher assistant",
-            "Specialized AI agents",
-            "More generations",
-            "AI-based automations"
-          ]
-        },
-        {
-          "title": "Advanced academic management",
-          "items": [
-            "Detailed student tracking",
-            "Performance analysis",
-            "Advanced reports",
-            "Complete history",
-            "More storage",
-            "More classes and students"
-          ]
-        }
-      ],
-      "agentsTitle": "AI Agents",
-      "agentsIntro": "Your team of assistants inside Lenio.",
-      "agents": [
-        {
-          "title": "Planning Agent",
-          "description": "Helps you design classes and sequences."
-        },
-        {
-          "title": "Assessment Agent",
-          "description": "Creates assessments, questions and rubrics."
-        },
-        {
-          "title": "Analytics Agent",
-          "description": "Analyzes results and finds patterns."
-        },
-        {
-          "title": "Feedback Agent",
-          "description": "Generates feedback for your students."
-        },
-        {
-          "title": "Content Agent",
-          "description": "Turns content into activities and explanations."
-        }
-      ]
-    },
-    "school": {
-      "name": "School",
-      "description": "Seats and licenses for schools. Administrators invite their teachers.",
-      "cta": "Contact sales",
-      "include": "Includes",
-      "features": [
-        "Institutional workspace",
-        "Teacher administration",
-        "Invitations",
-        "Member management",
-        "Roles and permissions",
-        "Institutional classes",
-        "Shared information",
-        "Teams and departments",
-        "Institutional resources",
-        "Centralized administration",
-        "Institutional reports",
-        "Seat management",
-        "Institutional billing",
-        "Institutional support"
-      ]
+    "title": "Pricing",
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "preferred": "Most popular",
+    "perMonth": "/ month",
+    "perYearMonths": "/ year · 10 months",
+    "perSeatMonth": "/ month for {count, plural, one {# seat} other {# seats}}",
+    "perSeatYear": "/ year for {count, plural, one {# seat} other {# seats}} · 10 months",
+    "seatsLabel": "Seats",
+    "addSeat": "Add a seat",
+    "removeSeat": "Remove a seat",
+    "editSeatsHint": "Click to enter the number of seats",
+    "docsNote": "Check the <link>documentation</link> for the limits, features and full specifications of each plan.",
+    "plans": {
+      "lite": {
+        "subtitle": "For organizing your teaching work.",
+        "groups": [
+          {
+            "category": "Teaching",
+            "items": [
+              "Personal workspace",
+              "Basic class management",
+              "Students and activities",
+              "Basic grades",
+              "Basic planning"
+            ]
+          },
+          {
+            "category": "AI",
+            "items": [
+              "10 AI credits per month",
+              "Access to basic models"
+            ]
+          }
+        ],
+        "cta": "Start for free"
+      },
+      "go": {
+        "subtitle": "To work and manage better.",
+        "includesText": "Everything included in Lite",
+        "groups": [
+          {
+            "category": "Teaching",
+            "items": [
+              "More classes and students",
+              "Assessments and rubrics",
+              "Academic tracking",
+              "Full lesson plans"
+            ]
+          },
+          {
+            "category": "AI",
+            "items": [
+              "150 AI credits per month",
+              "Access to basic and standard models",
+              "Established AI agents"
+            ]
+          }
+        ],
+        "cta": "Choose Go"
+      },
+      "pro": {
+        "subtitle": "To boost your work with AI.",
+        "includesText": "Everything included in Go",
+        "groups": [
+          {
+            "category": "Advanced AI",
+            "items": [
+              "400 AI credits per month",
+              "Access to advanced models",
+              "Established AI agents",
+              "Create your own AI agents",
+              "Advanced agent customization"
+            ]
+          },
+          {
+            "category": "Automation",
+            "items": [
+              "Advanced performance analysis",
+              "AI automations"
+            ]
+          }
+        ],
+        "cta": "Choose Pro"
+      },
+      "school": {
+        "subtitle": "For educational institutions.",
+        "groups": [
+          {
+            "category": "Workspace & institution",
+            "items": [
+              "Institutional workspace",
+              "Teacher and team management",
+              "Custom roles and permissions"
+            ]
+          },
+          {
+            "category": "Organization & AI",
+            "items": [
+              "Centralized administration and seats",
+              "Institutional resources and AI"
+            ]
+          }
+        ],
+        "cta": "Start with School"
+      }
     }
   },
   "countrySelector": {
@@ -342,7 +310,42 @@
     "noResults": "No results"
   },
   "footer": {
-    "rights": "Lenio is the commercial name of CETI OS.",
-    "iso": "Document and process management for educational institutions, ISO 9001 aligned."
+    "ctaTitle": "Start simplifying your day-to-day as a teacher",
+    "ctaSubtitle": "Create your free personal account or book a demo for your school.",
+    "ctaButton": "Start for free",
+    "bio": "Lenio is the educational platform made by and for teachers, built with passion by <link>Ceti Team</link>.",
+    "countryRegion": "Country / Region:",
+    "productTitle": "Product",
+    "productItems": [
+      "Workspaces",
+      "Repository",
+      "Teams",
+      "Classes",
+      "Inbox",
+      "Format builder",
+      "AI Agents",
+      "Agenda"
+    ],
+    "companyTitle": "Company",
+    "aboutCeti": "About Ceti Team",
+    "blog": "Institutional blog",
+    "contact": "Contact",
+    "resourcesTitle": "Resources",
+    "docs": "Documentation",
+    "helpFaq": "Help center / FAQ",
+    "guides": "Guides for teachers",
+    "community": "Teachers' Community",
+    "changelog": "News / Changelog",
+    "status": "System status",
+    "legalTitle": "Legal & Privacy",
+    "terms": "Terms and conditions",
+    "privacy": "Privacy policy",
+    "dataProtection": "Data processing (Law 1581)",
+    "cookies": "Cookie policy",
+    "sla": "Service Level (SLA)",
+    "security": "Information security",
+    "credits": "Licenses / Credits",
+    "rights": "© {year} Ceti Team S.A.S. All rights reserved.",
+    "madeIn": "Made with dedication in Bogotá, Colombia."
   }
 }
